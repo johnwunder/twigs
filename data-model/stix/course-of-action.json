@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "course-of-action",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../common/base.json"
+    },
+    {
+      "$ref": "../common/describable.json"
+    },
+    {
+      "properties": {
+        "_type": {
+          "enum": ["course-of-action"]
+        },
+        "stage": {
+          "type": "string",
+          "enum": ["Remedy", "Response"],
+          "description": "Whether this course of action is a preemptive remedy or a response action."
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "Perimeter Blocking",
+            "Internal Blocking",
+            "Redirection",
+            "Redirection (Honey Pot)",
+            "Hardening",
+            "Patching",
+            "Eradication",
+            "Rebuilding",
+            "Training",
+            "Monitoring",
+            "Physical Access Restrictions",
+            "Logical Access Restrictions",
+            "Public Disclosure",
+            "Diplomatic Actions",
+            "Policy Actions",
+            "Other"
+          ],
+          "description": "The type of course of action this describes, such as a policy change, monitoring, or redirection."
+        },
+        "objective": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "A textual description for this COA objective"
+            },
+            "applicability_confidence": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6,
+              "description": "The likelihood that carrying out the COA will achieve this objective, using the Admirality scale"
+            }
+          }
+        },
+        "structured_coa": {
+          "type": "object",
+          "description": "A structured representation for how this course of action can be achieved. For example, a Snort blocking rule."
+        },
+        "impact": {
+          "type": "object",
+          "allOf": [
+            {"$ref": "../common/statement.json"},
+            {
+              "properties": {
+                "value": {
+                  "enum": ["high", "medium", "low"]
+                }
+              }
+            }
+          ]
+        },
+        "cost": {
+          "type": "object",
+          "allOf": [
+            {"$ref": "../common/statement.json"},
+            {
+              "properties": {
+                "value": {
+                  "enum": ["high", "medium", "low"]
+                }
+              }
+            }
+          ]
+        },
+        "efficacy": {
+          "type": "object",
+          "allOf": [
+            {"$ref": "../common/statement.json"},
+            {
+              "properties": {
+                "value": {
+                  "enum": ["high", "medium", "low"]
+                }
+              }
+            }
+          ]
+        }
+    	}
+    }
+  ],
+  "required": ["stage", "type", "objective"],
+  "relationships": {
+    "related": ["course-of-action"],
+    "equivalent": ["course-of-action"]
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "threat-actor",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../common/base.json"
+    },
+    {
+      "$ref": "../common/describable.json"
+    },
+    {
+      "properties": {
+        "_type": {
+          "enum": ["threat-actor"]
+        },
+        "impact": {
+          "$ref": "../common/impact.json"
+        },
+        "identity": {
+          "$ref": "../common/identity.json"
+        },
+        "type": {
+          "allOf": [
+            {"$ref": "../common/statement.json"},
+            {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "Cyber Espionage Operations",
+                    "White Hat Hacker",
+                    "Gray Hat Hacker",
+                    "Black Hat Hacker",
+                    "Hacktivist",
+                    "State Sponsored",
+                    "Botnet Operator",
+                    "Malware Developer",
+                    "Money Launderer",
+                    "Organized Crime",
+                    "Spammer",
+                    "Traffic",
+                    "Underground Call",
+                    "Insider Threat",
+                    "Disgruntled User"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "motivation": {
+          "allOf": [
+            {"$ref": "../common/statement.json"},
+            {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "Ideological",
+                    "Anti-Corruption",
+                    "Anti-Establishment",
+                    "Environmentalist",
+                    "Ethnic / Nationalist",
+                    "Information Freedom",
+                    "Religious",
+                    "Security Awareness",
+                    "Human Rights",
+                    "Ego",
+                    "Financial or Economic",
+                    "Military",
+                    "Opportunistic",
+                    "Political"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "sophistication": {
+          "allOf": [
+            {"$ref": "../common/statement.json"},
+            {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "Innovator",
+                    "Expert",
+                    "Practitioner",
+                    "Novice",
+                    "Aspirant"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "planning_and_operational_support": {
+          "allOf": [
+            {"$ref": "../common/statement.json"},
+            {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "Data Exploitation",
+                    "Data Exploitation - Analytic Support",
+                    "Data Exploitation - Translation Support",
+                    "Financial Resources",
+                    "Financial Resources - Academic",
+                    "Financial Resources - Commercial",
+                    "Financial Resources - Government",
+                    "Financial Resources - Hacktivist or Grassroot",
+                    "Financial Resources - Non-Attributable Finance",
+                    "Skill Development / Recruitment",
+                    "Skill Development / Recruitment - Contracting and Hiring",
+                    "Skill Development / Recruitment - Document Exploitation (DOCEX) Training",
+                    "Skill Development / Recruitment - Internal Training",
+                    "Skill Development / Recruitment - Military Programs",
+                    "Skill Development / Recruitment - Security / Hacker Conferences",
+                    "Skill Development / Recruitment - Underground Forums",
+                    "Skill Development / Recruitment - University Programs",
+                    "Planning",
+                    "Planning - Operational Cover Plan",
+                    "Planning - Open-Source Intelligence (OSINT) Gathering",
+                    "Planning - Pre-Operational Surveillance and Reconnaissance",
+                    "Planning - Target Selection"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+    	},
+      "relationships": {
+        "observed-ttp": ["malware", "attack-pattern"],
+        "associated": ["campaign", "threat-actor"],
+        "equivalent": ["threat-actor"]
+      }
+    }
+  ]
+}

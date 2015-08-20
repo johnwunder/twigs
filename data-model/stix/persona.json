@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "persona",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../stix/ttp-base.json"
+    },
+    {
+      "properties": {
+        "_type": {
+          "enum": ["persona"]
+        },
+        "identity": {
+          "$ref": "../common/identity.json"
+        }
+      }
+    }
+  ],
+  "relationships": {
+    "related": ["malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
+    "kill-chain-phases": ["kill-chain-phase"],
+    "exploits": ["exploit-target"],
+    "equivalent": ["exploit"]
+  }
+}

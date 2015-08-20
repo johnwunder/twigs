@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "sighting",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../common/base.json"
+    },
+    {
+      "properties": {
+        "_type": {
+          "enum": ["sighting"]
+        },
+        "source": {
+          "type": "string",
+          "description": "The ID of the entity doing the sighting."
+        },
+        "target": {
+          "type": "string",
+          "description": "The id of the target of the sighting"
+        },
+        "observed_at": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": "A list of times that this sighting was observed."
+        }
+      }
+    }
+  ],
+  "relationships": {
+
+  }
+}

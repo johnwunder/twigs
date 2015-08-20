@@ -1,0 +1,51 @@
+[
+  {
+    "_type":      "indicator",
+    "_id":         "mitre.org:indicator-1234",
+    "timestamp":  "2015-08-29T00:00:00Z",
+    "urls":       ["http://stix.mitre.org/indicators/1234"],
+    "title":      "IND-153",
+    "credibility": 3,
+    "pattern": {
+      "operator": "AND",
+      "operands": [
+        {
+          "condition":   "equals",
+          "object_id": "mitre.org:observable-4321"
+        }
+      ]
+    },
+    "marking_ids": ["us-cert:TLP-GREEN"]
+  },
+  {
+    "_type":      "attack-pattern",
+    "_id":         "mitre.org:ttp-1234",
+    "timestamp":  "2015-08-29T00:00:00Z",
+    "urls":       ["http://stix.mitre.org/ttps/1234"],
+    "title":      "Spear Phishing",
+    "credibility": 3,
+    "marking_ids": ["us-cert:TLP-GREEN"]
+  },
+  {
+    "_type":      "ipv4-address-object",
+    "_id":         "mitre.org:observable-4321",
+    "timestamp":  "2015-08-29T00:00:00Z",
+    "urls":       ["http://stix.mitre.org/observables/4321"],
+    "address":       "1.2.3.4",
+    "credibility": 3,
+    "marking_ids": ["us-cert:TLP-GREEN"]
+  },
+  {
+    "_type":      "relationship",
+    "_id":         "mitre.org:relationship-1234",
+    "timestamp":  "2015-08-29T00:00:00Z",
+    "urls":       ["http://stix.mitre.org/relationships/4321"],
+    "source":    "mitre.org:indicator-1234",
+    "target":      "mitre.org:ttp-1234",
+    "type":       "indicated-ttp",
+    "confidence": "medium",
+    "credibility": 3,
+    "observed_at": ["2015-08-29T00:00:00Z"],
+    "marking_ids": ["us-cert:TLP-GREEN"]
+  }
+]

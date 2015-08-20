@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "ipv4-address",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../common/base.json"
+    },
+    {
+      "properties": {
+        "_type": {
+          "enum": ["ipv4-address-object"]
+        },
+        "address": {
+          "type": "string"
+        }
+      }
+    }
+  ],
+  "relationships": {
+    
+  }
+}

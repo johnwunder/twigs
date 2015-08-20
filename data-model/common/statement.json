@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "statement",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "string",
+      "description": "A value from the enumeration for this statement"
+    },
+    "description": {
+      "type": "string",
+      "description": "A textual description of this statement"
+    },
+    "credibility": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 6,
+      "description": "The credibility of this statement, using the Admirality scale"
+    }
+  },
+  "required": ["value", "credibility"]
+}

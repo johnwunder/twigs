@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "common/relationship",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "base.json"
+    },
+    {
+      "properties": {
+        "_type": {
+          "enum": ["relationship"]
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of relationship being described."
+        },
+        "source": {
+          "type": "string",
+          "description": "The id of the source (from node) of the relationship."
+        },
+        "target": {
+          "type": "string",
+          "description": "The id of the target (to node) of the relationship"
+        },
+        "observed_at": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": "A list of times that this relationship was observed."
+        }
+    	}
+    }
+  ],
+	"required": ["type", "source", "target"]
+}
