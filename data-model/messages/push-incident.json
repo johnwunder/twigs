@@ -4,9 +4,6 @@
 	"type": "object",
   "allOf": [
     {
-      "$ref": "message-base.json"
-    },
-    {
       "properties": {
         "incident": {
           "$ref": "../binding/stix/incident.json"
@@ -18,6 +15,9 @@
           }
         }
       }
+    },
+    {
+      "$ref": "message-base.json"
     }
   ]
 }

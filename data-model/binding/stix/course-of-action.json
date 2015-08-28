@@ -4,10 +4,10 @@
 	"type": "object",
   "allOf": [
     {
-      "$ref": "../core-binding.json"
+      "$ref": "../../data-model/stix/course-of-action.json"
     },
     {
-      "$ref": "../../data-model/stix/course-of-action.json"
+      "$ref": "../core-binding.json"
     },
     {
       "properties": {

@@ -4,9 +4,6 @@
 	"type": "object",
   "allOf": [
     {
-      "$ref": "message-base.json"
-    },
-    {
       "properties": {
         "construct": {
           "anyOf": [
@@ -36,6 +33,9 @@
           }
         }
       }
+    },
+    {
+      "$ref": "message-base.json"
     }
   ]
 }
