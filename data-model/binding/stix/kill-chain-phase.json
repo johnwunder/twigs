@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "kill-chain-phase",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../core-binding.json"
+    },
+    {
+      "$ref": "../../data-model/stix/kill-chain-phase.json"
+    },
+    {
+      "properties": {
+        "_type": {"enum": ["kill-chain-phase"]}
+      }
+    }
+  ]
+}

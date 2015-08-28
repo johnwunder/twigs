@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "victim-targeting",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../core-binding.json"
+    },
+    {
+      "$ref": "../../data-model/stix/victim-targeting.json"
+    },
+    {
+      "properties": {
+        "_type": {"enum": ["victim-targeting"]}
+      }
+    }
+  ]
+}

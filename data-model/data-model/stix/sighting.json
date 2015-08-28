@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "sighting",
+  "description": "A sighting of potentially malicious activity",
+	"type": "object",
+  "properties": {
+    "source_ref": {
+      "type": "string",
+      "description": "The ID of the entity doing the sighting."
+    },
+    "target_ref": {
+      "type": "string",
+      "description": "The id of the target of the sighting"
+    },
+    "observed_at": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "description": "A list of times that this sighting was observed."
+    }
+  },
+  "relationships": {
+
+  }
+}

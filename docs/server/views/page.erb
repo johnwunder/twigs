@@ -7,44 +7,48 @@
   </head>
 
   <body>
-    <h1><a href="/">twigs data model</a></h1>
-    <h2><%= @schema[:title] %></h2>
+    <h1><a href="/">twigs</a> <span class="fake-link"> / <%= page_title %> /</span> <%= @schema[:title].gsub("twigs/", "") %></h1>
     <p><%= @schema[:description] %></p>
 
-    <h3>Fields</h3>
-    <table id="fields-list">
-      <thead>
-        <tr>
-          <th class="name-col">Name</th>
-          <th class="type-col">Type</th>
-          <th class="desc-col">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @schema[:fields].each do |title, field| %>
-          <%= erb :row, :locals => {:title => title, :field => field, :nesting => 0, :nester => title} %>
-        <% end %>
-    </table>
+    <section>
+      <h2>Fields</h2>
+      <table id="fields-list">
+        <thead>
+          <tr>
+            <th class="name-col">Name</th>
+            <th class="type-col">Type</th>
+            <th class="desc-col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @schema[:fields].each do |title, field| %>
+            <%= erb :row, :locals => {:title => title, :field => field, :nesting => 0, :nester => title} %>
+          <% end %>
+      </table>
+    </section>
 
     <% if @schema[:relationships] && @schema[:relationships].length > 0 %>
-    <h3>Relationships</h3>
-    <table id="relationships-list">
-      <thead>
-        <tr>
-          <th class="name-col">Relationship Name</th>
-          <th class="type-col">Target Type</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @schema[:relationships].each do |title, targets| %>
-          <tr><td class="name-col"><%= title %></td><td class="desc-col"><%= targets.join(", ") %></td></tr>
-        <% end %>
-      </tbody>
-    </table>
+    <section>
+      <h2>Relationships</h2>
+      <table id="relationships-list">
+        <thead>
+          <tr>
+            <th class="name-col">Relationship Name</th>
+            <th class="type-col">Target Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @schema[:relationships].each do |title, targets| %>
+            <tr><td class="name-col"><%= title %></td><td class="desc-col"><%= targets.join(", ") %></td></tr>
+          <% end %>
+        </tbody>
+      </table>
+    </section>
     <% end %>
 
     <% if @schema[:samples] && @schema[:samples].length > 0 %>
-      <h3>Samples</h3>
+    <section>
+      <h2>Samples</h2>
       <table id="samples-list">
         <tbody>
           <% @schema[:samples].each do |sample| %>
@@ -52,6 +56,7 @@
           <% end %>
         </tbody>
       </table>
+    </section>
     <% end %>
     <script>
       var expanders = document.getElementsByClassName('expander')

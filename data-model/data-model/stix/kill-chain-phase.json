@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "kill-chain-phase",
+  "description": "A single phase in a cyber kill chain",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../common/describable.json"
+    },
+    {
+      "properties": {
+      }
+    }
+  ],
+  "relationships": {
+    "equivalent": ["kill-chain-phase"]
+  }
+}

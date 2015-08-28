@@ -12,19 +12,28 @@ require 'sinatra'
 require "sinatra/reloader" if development?
 require 'json'
 
-$data_model_path = File.join(File.dirname(__FILE__), '..', '..', 'data-model')
+$data_model_path = File.join(File.dirname(__FILE__), '..', '..', 'data-model', 'binding')
+$messages_path = File.join(File.dirname(__FILE__), '..', '..', 'data-model', 'messages')
+$agnostic_data_model_path = File.join(File.dirname(__FILE__), '..', '..', 'data-model', 'data-model')
 $samples_path = File.join(File.dirname(__FILE__), '..', '..', 'samples')
 
 get "/" do
   @top_level_components = top_level_components
+  @messages = top_level_messages
 
   erb :home
+end
+
+get "/messages/:message" do
+  @schema = SchemaLoader.load_and_parse_schema(params[:message] + ".json", $messages_path)
+
+  erb :page, :locals => {:page_title => "messages"}
 end
 
 get "/:namespace/:schema" do
   @schema = SchemaLoader.load_and_parse_schema(File.join(params[:namespace], params[:schema]) + ".json", $data_model_path)
 
-  erb :page
+  erb :page, :locals => {:page_title => "core data model"}
 end
 
 get "/samples/:schema/:sample" do
@@ -41,9 +50,28 @@ def top_level_components
 
       {
         title: json['title'],
-        description: json['description'],
+        description: JSON.load(File.read(File.join($agnostic_data_model_path, schema_file)))['description'],
         namespace: schema_file.split('/').first,
         link: schema_file.gsub('.json', '')
+      }
+    end.compact
+  end
+
+  return schemas
+end
+
+def top_level_messages
+  schemas = []
+
+  Dir.chdir($messages_path) do
+    schemas = Dir.glob("**/*.json").reject {|sf| sf =~ /-base\.json/}.map do |schema_file|
+      json = JSON.load(File.read(schema_file))
+
+      {
+        title: json['title'].gsub("twigs/", ""),
+        description: json['description'],
+        namespace: schema_file.split('/').first,
+        link: "messages/" + schema_file.gsub(".json", "")
       }
     end.compact
   end
@@ -72,11 +100,13 @@ class SchemaLoader
     @current_schema = json
     @current_type = [json['title']]
 
+    data_model = get_data_model(schema)
+
     info = {
       title: json['title'],
-      description: json['description'],
+      description: data_model['description'],
       type: json['type'],
-      relationships: json['relationships'],
+      relationships: data_model['relationships'],
       samples: load_samples(json['title'])
     }
 
@@ -90,6 +120,15 @@ class SchemaLoader
     end
 
     return info
+  end
+
+  def get_data_model(schema)
+    path = File.join($agnostic_data_model_path, schema)
+    if File.exists?(path)
+      JSON.load(File.read(path))
+    else
+      {}
+    end
   end
 
   def load_samples(schema)
@@ -239,5 +278,13 @@ helpers do
     @cycler ||= args.first
     @cycler = args[args.index(@cycler) + 1]
     @cycler ||= args.first
+  end
+
+  def binding_class(title)
+    if ['_type', '_id', 'urls', 'timestamp', 'version', 'external_ids', 'producer', 'marking_ids'].include?(title)
+      'binding'
+    else
+      ''
+    end
   end
 end

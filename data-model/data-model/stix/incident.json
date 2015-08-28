@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "incident",
+  "description": "Instance of a cyber attack",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../common/describable.json"
+    },
+    {
+      "properties": {
+        "impact": {
+          "$ref": "../common/impact.json"
+        }
+    	}
+    }
+  ],
+  "relationships": {
+    "proposed-coa": ["course-of-action"],
+    "implemented-coa": ["course-of-action"],
+    "leveraged-ttp": ["malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
+    "attribution": ["threat-actor", "campaign"],
+    "related": ["incident", "indicator"],
+    "equivalent": ["incident"]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "tool",
+  "description": "A piece of software used by an attacker",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../stix/ttp-base.json"
+    },
+    {
+      "properties": {
+        "compensation_model": {
+          "type": "string",
+          "description": "The type of compensation model used for this tool"
+        },
+        "type": {
+          "allOf": [
+            {"$ref": "../common/statement.json"},
+            {
+              "properties": {
+                "value": {
+                  "enum": ["Penetration Testing", "Port Scanner", "Traffic Scanner", "Vulnerability Scanner", "Application Scanner", "Password Cracking"]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "relationships": {
+    "related": ["malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
+    "kill-chain-phases": ["kill-chain-phase"],
+    "exploits": ["exploit-target"],
+    "equivalent": ["tool"]
+  },
+  "required": ["type"]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "threat-actor",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../core-binding.json"
+    },
+    {
+      "$ref": "../../data-model/stix/threat-actor.json"
+    },
+    {
+      "properties": {
+        "_type": {"enum": ["threat-actor"]}
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "kill-chain",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../core-binding.json"
+    },
+    {
+      "$ref": "../../data-model/stix/kill-chain.json"
+    },
+    {
+      "properties": {
+        "_type": {"enum": ["kill-chain"]}
+      }
+    }
+  ]
+}

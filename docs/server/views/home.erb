@@ -1,32 +1,59 @@
 <html>
   <head>
-    <title>Twigs Data Dictionary</title>
+    <title>Twigs</title>
 
     <link rel="stylesheet" href="/styles.css"></link>
     <link href='http://fonts.googleapis.com/css?family=Dosis:400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
   </head>
 
-  <body>
-    <h1><a href="/">twigs data model</a></h1>
+  <body id="home">
+    <h1><a href="/">twigs</a></h1>
 
-    <table id="components-list">
-      <caption>Top-Level Components</caption>
-      <thead>
-        <tr>
-          <th>Component</th>
-          <th>Namespace</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @top_level_components.each do |component| %>
-          <tr>
-            <td><a href="<%= component[:link] %>"><%= component[:title] %></a></td>
-            <td><%= component[:namespace] %></td>
-            <td><%= component[:description] %></td>
-          </tr>
-        <% end %>
-    </table>
+    <div class="column">
+      <section>
+        <h2>Core Data Model</h2>
+        <p>The core data model defines the building blocks for cyber threat intelligence. It consists of a set of top-level objects representing concepts in CTI and defines relationships between those objects.</p>
+        <br />
+        <table id="components-list">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @top_level_components.each do |component| %>
+              <tr>
+                <td><a href="<%= component[:link] %>"><%= component[:title] %></a></td>
+                <td><%= component[:description] %></td>
+              </tr>
+            <% end %>
+        </table>
+      </section>
+    </div>
+
+    <div class="column">
+      <section>
+        <h2>Messages</h2>
+        <p>The messages model leverages objects from the data model and composes them into defined messages for specific purposes. As an implementor, you only need to be concerned with the messages model for the messages you implement.</p>
+        <br />
+        <table id="messages-list">
+          <thead>
+            <tr>
+              <th>Message</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @messages.each do |message| %>
+              <tr>
+                <td><a href="<%= message[:link] %>"><%= message[:title] %></a></td>
+                <td><%= message[:description] %></td>
+              </tr>
+            <% end %>
+        </table>
+      </section>
+    </div>
   </body>
 </html>

@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "ttp-base",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../common/describable.json"
+    },
+    {
+      "properties": {
+        "impact": {
+          "$ref": "../common/impact.json"
+        }
+      }
+    }
+  ],
+  "required": []
+}

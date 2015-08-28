@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "course-of-action",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../core-binding.json"
+    },
+    {
+      "$ref": "../../data-model/stix/course-of-action.json"
+    },
+    {
+      "properties": {
+        "_type": {"enum": ["course-of-action"]}
+      }
+    }
+  ]
+}

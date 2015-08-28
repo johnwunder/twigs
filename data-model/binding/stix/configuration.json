@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "configuration",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../core-binding.json"
+    },
+    {
+      "$ref": "../../data-model/stix/configuration.json"
+    },
+    {
+      "properties": {
+        "_type": {"enum": ["configuration"]}
+      }
+    }
+  ]
+}

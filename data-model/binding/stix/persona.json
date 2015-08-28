@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "persona",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../core-binding.json"
+    },
+    {
+      "$ref": "../../data-model/stix/persona.json"
+    },
+    {
+      "properties": {
+        "_type": {"enum": ["persona"]}
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "twigs/message-base",
+	"type": "object",
+  "description": "Fields valid across all messages",
+  "properties": {
+    "_id": {
+      "type": "string",
+      "definition": "A message id"
+    },
+    "_type": {
+      "type": "string",
+      "definition": "The type of message, hardcoded"
+    },
+    "markings": {
+      "type": "array",
+      "items": {
+        "title": "marking",
+        "type": "object"
+      }
+    }
+  }
+}

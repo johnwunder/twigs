@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "kill-chain",
+  "description": "Categorization of the phases of an attack",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../common/describable.json"
+    },
+    {
+      "properties": {
+        "_type": {
+          "enum": ["kill-chain"]
+        },
+        "phases": {
+          "type": "array",
+          "items": {
+            "$ref": "kill-chain-phase.json"
+          }
+        }
+      }
+    }
+  ],
+  "relationships": {
+    "equivalent": ["kill-chain"]
+  }
+}

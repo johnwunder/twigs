@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "campaign",
+  "description": "Sustained attack with a defined intent",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../common/describable.json"
+    },
+    {
+      "properties": {
+        "impact": {
+          "$ref": "../common/impact.json"
+        },
+        "status": {
+          "type": "object",
+          "allOf": [
+            {"$ref": "../common/statement.json"},
+            {
+              "properties": {
+                "value": {
+                  "enum": ["Historic", "Ongoing", "Future"]
+                }
+              }
+            }
+          ]
+        }
+    	}
+    }
+  ],
+  "relationships": {
+    "attribution": ["threat-actor"],
+    "activity": ["course-of-action"],
+    "related": ["campaign", "incident", "malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
+    "equivalent": ["campaign"]
+  }
+}

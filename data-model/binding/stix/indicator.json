@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "indicator",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../core-binding.json"
+    },
+    {
+      "$ref": "../../data-model/stix/indicator.json"
+    },
+    {
+      "properties": {
+        "_type": {"enum": ["indicator"]}
+      }
+    }
+  ]
+}

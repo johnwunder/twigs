@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "twigs/push-incident",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "message-base.json"
+    },
+    {
+      "properties": {
+        "incident": {
+          "$ref": "../binding/stix/incident.json"
+        },
+        "relationships": {
+          "type": "array",
+          "items": {
+            "$ref": "../binding/stix/relationship.json"
+          }
+        }
+      }
+    }
+  ]
+}

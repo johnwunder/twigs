@@ -20,17 +20,19 @@ This is my personal take at my ideal form for the next versions of STIX and CybO
 
 1. Implemented as JSON. XML encourages complexity and a binary encoding is harder to work with. If scale becomes an issue, reconsider. (See #5 above)
 
-2. Top-level relationships, and any other references between objects are always by id. In other words, no embedding top-level constructs in other top-level constructs.
+2. The data model is layer: an abstract data model, a binding to JSON that adds fields necessary for automated processing, and finally a set of messages that define the actual exchanges.
 
-3. Data markings are at the object level, no more and no less. More granular markings could be done either by extension or by issuing multiple versions of the object.
+3. Top-level relationships, and any other references between objects are always by id. In other words, no embedding top-level constructs in other top-level constructs.
 
-4. Refactor CybOX to remove the Observable layer. CybOX becomes just the objects. STIX has a "Sighting" object that's what used to be Observable. Patterning is in Indicator.
+4. Data markings are at the object level, no more and no less. More granular markings could be done either by extension or by issuing multiple versions of the object.
 
-5. Add a CTI-Common specification for high-level constructs used across all languages.
+5. Refactor CybOX to remove the Observable layer. CybOX becomes just the objects. STIX has a "Sighting" object that's what used to be Observable. Patterning is in Indicator.
 
-6. All top-level objects have a `_type` field that indicate what they are.
+6. Add a CTI-Common specification for high-level constructs used across all languages.
 
-7. Remove controlled vocabularies and replace with hardcoded enumerations. In most cases, implement these as a "Statement" that also allows for descriptive text.
+7. All top-level objects have a `_type` field that indicate what they are.
+
+8. Remove controlled vocabularies and replace with hardcoded enumerations. In most cases, implement these as a "Statement" that also allows for descriptive text.
 
 ## Open Questions
 

@@ -54,18 +54,17 @@ body {
 }
 
 h1 {
-  font-weight: 300;
+	font-weight: normal;
   font-size: 36px;
   margin: 20px 0;
 }
 
 h2 {
-  border: 1px solid black;
   background-color: black;
   color: white;
-  padding: 5px 0 10px 5px;
-  margin: 20px 0;
-  font-size: 24px;
+  padding: 8px 0 10px 5px;
+  margin: 20px 0 10px;
+  font-size: 18px;
 }
 
 table {
@@ -134,8 +133,8 @@ a.inline:hover {
   text-decoration: underline;
 }
 
-h1 a, h1 a:visited, h1 a:focus, h1 a:active {
-  color: #aaa;
+h1 a, h1 a:visited, h1 a:focus, h1 a:active, h1 .fake-link {
+  color: #ccc;
   text-decoration: none;
 }
 
@@ -150,4 +149,20 @@ h1 a:hover {
 h3 {
 	font-size: 24px;
 	margin: 20px 0;
+}
+
+ul {
+	list-style-type: disc;
+	list-style-position: inside;
+	margin: 10px;
+}
+
+
+.column section h2 a {
+	color: white;
+	text-decoration: none;
+}
+
+tr.binding {
+	opacity: 0.5;
 }

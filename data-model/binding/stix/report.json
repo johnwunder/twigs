@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "report",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../core-binding.json"
+    },
+    {
+      "$ref": "../../data-model/stix/report.json"
+    },
+    {
+      "properties": {
+        "_type": {"enum": ["report"]}
+      }
+    }
+  ]
+}

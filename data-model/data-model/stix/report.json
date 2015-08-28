@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "report",
+  "description": "A collection of intelligence with a common theme",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../common/describable.json"
+    },
+    {
+      "properties": {
+        "item_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "References to the items that belong to this report. Any top-level type is valid."
+        }
+      }
+    }
+  ],
+  "relationships": {
+    "related": ["report"],
+    "parent": ["report"],
+    "equivalent": ["report"]
+  }
+}
