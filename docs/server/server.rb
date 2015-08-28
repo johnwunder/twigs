@@ -12,10 +12,10 @@ require 'sinatra'
 require "sinatra/reloader" if development?
 require 'json'
 
-$data_model_path = File.join(File.dirname(__FILE__), '..', '..', 'data-model', 'binding')
-$messages_path = File.join(File.dirname(__FILE__), '..', '..', 'data-model', 'messages')
-$agnostic_data_model_path = File.join(File.dirname(__FILE__), '..', '..', 'data-model', 'data-model')
-$samples_path = File.join(File.dirname(__FILE__), '..', '..', 'samples')
+$data_model_path = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'data-model', 'binding'))
+$messages_path = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'data-model', 'messages'))
+$agnostic_data_model_path = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'data-model', 'data-model'))
+$samples_path = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'samples'))
 
 get "/" do
   @top_level_components = top_level_components
