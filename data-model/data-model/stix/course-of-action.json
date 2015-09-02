@@ -57,6 +57,7 @@
         },
         "impact": {
           "type": "object",
+          "description": "The impact that implementing this COA would have on system operations",
           "allOf": [
             {"$ref": "../common/statement.json"},
             {
@@ -70,6 +71,7 @@
         },
         "cost": {
           "type": "object",
+          "description": "The cost of implementing this COA (monetary, operational, or other)",
           "allOf": [
             {"$ref": "../common/statement.json"},
             {
@@ -83,6 +85,7 @@
         },
         "efficacy": {
           "type": "object",
+          "description": "The effectiveness of this COA at resolving the issues it intends to resolve",
           "allOf": [
             {"$ref": "../common/statement.json"},
             {

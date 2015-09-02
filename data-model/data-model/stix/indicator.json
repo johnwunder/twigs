@@ -7,7 +7,8 @@
     {
       "properties": {
         "pattern": {
-          "$ref": "#/definitions/pattern"
+          "$ref": "#/definitions/pattern",
+          "description": "The pattern used to identify the presence of this indicator"
         },
         "start_time": {
           "type": "string",
@@ -20,7 +21,8 @@
           "description": "The time at which this indicator should no longer be considered valid. If omitted, unknown or ongoing."
         },
         "impact": {
-          "$ref": "../common/impact.json"
+          "$ref": "../common/impact.json",
+          "description": "The impact to operations of the TTP(s) that this indicator detects were they to be realized (individually)"
         }
     	}
     }

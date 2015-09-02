@@ -10,12 +10,15 @@
     {
       "properties": {
         "impact": {
-          "$ref": "../common/impact.json"
+          "$ref": "../common/impact.json",
+          "description": "The impact that an attack by this threat actor could have on operations."
         },
         "identity": {
-          "$ref": "../common/identity.json"
+          "$ref": "../common/identity.json",
+          "description": "The identity of this threat actor"
         },
         "type": {
+          "description": "The type of threat actor",
           "allOf": [
             {"$ref": "../common/statement.json"},
             {
@@ -44,6 +47,7 @@
           ]
         },
         "motivation": {
+          "description": "The motivation for why this threat actor carries out malicious attacks.",
           "allOf": [
             {"$ref": "../common/statement.json"},
             {
@@ -71,6 +75,7 @@
           ]
         },
         "sophistication": {
+          "description": "The sophistication of this threat actor.",
           "allOf": [
             {"$ref": "../common/statement.json"},
             {
@@ -89,6 +94,7 @@
           ]
         },
         "planning_and_operational_support": {
+          "description": "The planning and operational support available to this threat actor.",
           "allOf": [
             {"$ref": "../common/statement.json"},
             {

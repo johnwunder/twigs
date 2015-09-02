@@ -1,0 +1,10 @@
+{
+  "_type":       "sighting",
+  "_id":         "acme.org:sighting-1234",
+  "_version":    1,
+  "_timestamp":   "2015-08-30T00:00:00Z",
+  "source_ref":  "example.com",
+  "target_ref":  "mitre.org:indicator-1234",
+  "observed_at": ["2015-08-30T00:00:00Z"],
+  "marking_ids": ["us-cert:TLP-RED"]
+}

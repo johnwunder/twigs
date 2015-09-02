@@ -2,12 +2,13 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "impact",
   "type": "object",
+  "description": "The impact on operations if this construct were to be realized.",
   "properties": {
     "level": {
       "type": "integer",
       "minimum": 0,
       "maximum": 10,
-      "description": "The estimated impact if this construct were to be realized."
+      "description": "The estimated severity of the impact."
     },
     "intended_effects": {
       "type": "array",
@@ -34,7 +35,7 @@
     },
     "description": {
       "type": "string",
-      "description": "A prose description of the impact"
+      "description": "A prose description of the impact."
     }
   }
 }

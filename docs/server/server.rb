@@ -281,7 +281,7 @@ helpers do
   end
 
   def binding_class(title)
-    if ['_type', '_id', '_version', 'timestamp', 'external_ids', 'producer', 'marking_refs'].include?(title)
+    if ['_type', '_id', '_version', '_timestamp', 'external_ids', 'producer', 'marking_refs'].include?(title)
       'binding'
     else
       ''

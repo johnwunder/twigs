@@ -16,7 +16,8 @@
                     "enum": ["identity"]
                   },
                   "target": {
-                    "$ref": "../common/identity.json"
+                    "$ref": "../common/identity.json",
+                    "description": "A non-technical target (e.g. industry sector, nationality)"
                   }
                 }
               },
@@ -26,6 +27,7 @@
                     "enum": ["system"]
                   },
                   "target": {
+                    "description": "Describes a technical target",
                     "allOf": [
                       {
                         "$ref": "../common/statement.json"
@@ -75,6 +77,7 @@
                     "enum": ["information"]
                   },
                   "target": {
+                    "description": "Describes an information asset target",
                     "allOf": [
                       {
                         "$ref": "../common/statement.json"

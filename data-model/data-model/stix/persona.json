@@ -10,7 +10,8 @@
     {
       "properties": {
         "identity": {
-          "$ref": "../common/identity.json"
+          "$ref": "../common/identity.json",
+          "description": "The identifying characteristics that this persona describes."
         }
       }
     }

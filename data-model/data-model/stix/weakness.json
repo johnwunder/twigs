@@ -10,7 +10,8 @@
     {
       "properties": {
         "impact": {
-          "$ref": "../common/impact.json"
+          "$ref": "../common/impact.json",
+          "description": "The impact of this weakness were it to be exploited"
         }
     	}
     }

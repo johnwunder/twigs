@@ -9,7 +9,8 @@
     {
       "properties": {
         "impact": {
-          "$ref": "../common/impact.json"
+          "$ref": "../common/impact.json",
+          "description": "The impact on operations if this TTP were to be realized."
         }
       }
     }

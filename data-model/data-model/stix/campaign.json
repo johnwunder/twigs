@@ -10,10 +10,12 @@
     {
       "properties": {
         "impact": {
-          "$ref": "../common/impact.json"
+          "$ref": "../common/impact.json",
+          "description": "The impact of this campaign on operations (assuming the organization is under attack)"
         },
         "status": {
           "type": "object",
+          "description": "The status of this campaign (historic, ongoing, or future)",
           "allOf": [
             {"$ref": "../common/statement.json"},
             {

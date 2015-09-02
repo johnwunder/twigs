@@ -1,0 +1,18 @@
+{
+  "_type":      "indicator",
+  "_id":        "mitre.org:indicator-1234",
+  "_version":   1,
+  "_timestamp":  "2015-08-29T00:00:00Z",
+  "title":      "IND-153",
+  "credibility": 3,
+  "pattern": {
+    "operator": "AND",
+    "operands": [
+      {
+        "condition":   "equals",
+        "object_ref": "mitre.org:observable-4321"
+      }
+    ]
+  },
+  "marking_ids": ["us-cert:TLP-GREEN"]
+}

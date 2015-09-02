@@ -1,14 +1,17 @@
 require 'json-schema'
 require 'json'
+require_relative 'prototypes/validator'
 
 task :validate do
   desc "Validates all of the samples in the sample directory"
+
+  validator = TwigsValidator.new
 
   Dir.chdir('data-model') do
     errors = {}
 
     Dir.glob('../samples/**/*.json').each do |sample|
-      local_errors = JSON::Validator.fully_validate('stix/package.json', File.read(sample))
+      local_errors = validator.validate(File.read(sample))
 
       if local_errors.length == 0
         print '.'

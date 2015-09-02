@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
 	"title": "tool",
-  "description": "A piece of software used by an attacker",
+  "description": "A piece of software used directly by an attacker",
 	"type": "object",
   "allOf": [
     {
@@ -11,9 +11,10 @@
       "properties": {
         "compensation_model": {
           "type": "string",
-          "description": "The type of compensation model used for this tool"
+          "description": "The type of compensation model used for this tool."
         },
         "type": {
+          "description": "The type of tool being described",
           "allOf": [
             {"$ref": "../common/statement.json"},
             {
