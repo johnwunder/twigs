@@ -31,5 +31,5 @@
       "description": "The credibility of this construct, using the Admirality scale"
     }
   },
-	"required": ["type", "source_ref", "target_ref", "credibility"]
+  "required": ["type", "source_ref", "target_ref", "credibility"]
 }

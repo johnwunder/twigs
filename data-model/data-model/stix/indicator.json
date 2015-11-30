@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-	"title": "indicator",
+  "title": "indicator",
   "description": "Technical information that indicates compromise",
-	"type": "object",
+  "type": "object",
   "allOf": [
     {
       "properties": {

@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "observation",
+  "description": "A observation of potentially malicious activity",
+	"type": "object",
+  "properties": {
+    "source_ref": {
+      "type": "string",
+      "description": "The ID of the entity doing the observing."
+    },
+    "object_ref": {
+      "type": "string",
+      "description": "Reference to the object that this matches against."
+    },
+    "observed_at": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "description": "A list of times that this sighting was observed."
+    }
+  },
+  "relationships": {
+    "related": ["attack-pattern", "campaign", "configuration", "course-of-action", "exploit", "incident", "indicator", "infrastructure", "kill-chain", "kill-chain-phase", "malware", "observation", "persona", "report", "threat_actor", "tool", "victim-targeting", "vulnerability", "weakness"],
+    "sighted": ["indicator"],
+    "equivalent": ["observation"]
+  }
+}
