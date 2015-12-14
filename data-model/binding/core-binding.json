@@ -42,7 +42,7 @@
       "$ref": "../data-model/common/identity.json",
       "description": "The original producer of this representation."
     },
-    "marking_refs": {
+    "_marking_refs": {
       "type": "array",
       "description": "The set of markings to be applied to this construct",
       "items": {

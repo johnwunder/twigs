@@ -4,7 +4,6 @@
   "_version":   1,
   "_timestamp":  "2015-08-29T00:00:00Z",
   "title":      "IND-153",
-  "credibility": 3,
   "pattern": {
     "operator": "AND",
     "operands": [
@@ -14,5 +13,5 @@
       }
     ]
   },
-  "marking_ids": ["us-cert:TLP-GREEN"]
+  "_marking_refs": ["us-cert:TLP-GREEN"]
 }
