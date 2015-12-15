@@ -9,13 +9,9 @@
     },
     {
       "properties": {
-        "source_ref": {
-          "type": "string",
-          "description": "The ID of the entity doing the observing."
-        },
-        "object_ref": {
-          "type": "string",
-          "description": "Reference to the object that this matches against."
+        "object": {
+          "type": "object",
+          "description": "CybOX object definition that was observed."
         },
         "observed_at": {
           "type": "array",
