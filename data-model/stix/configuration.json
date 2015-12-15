@@ -1,17 +1,20 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-	"title": "vulnerability",
-  "description": "A flaw in software that opens it up to attack",
+	"title": "configuration",
+  "description": "A system configuration that might lead to compromise",
 	"type": "object",
   "allOf": [
+    {
+      "$ref": "../common/core.json"
+    },
     {
       "$ref": "../common/describable.json"
     },
     {
       "properties": {
         "impact": {
-          "description": "The impact of this vulnerability were it to be exploited",
-          "$ref": "../common/impact.json"
+          "$ref": "../common/impact.json",
+          "description": "The impact of this configuration on operations were it to be exploited"
         }
     	}
     }
@@ -19,6 +22,6 @@
   "relationships": {
     "potential-coa": ["course-of-action"],
     "related": ["configuration", "weakness", "vulnerability"],
-    "equivalent": ["vulnerability"]
+    "equivalent": ["configuration"]
   }
 }

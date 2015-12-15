@@ -5,6 +5,9 @@
 	"type": "object",
   "allOf": [
     {
+      "$ref": "../common/core.json"
+    },
+    {
       "properties": {
         "targets": {
           "type": "array",

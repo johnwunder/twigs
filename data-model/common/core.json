@@ -4,19 +4,15 @@
   "description": "The base properties used in all top-level types",
   "type": "object",
   "properties": {
-    "_type": {
+    "type": {
       "type": "string",
       "description": "Hardcoded value to indicate what type of construct this is"
     },
-    "_id": {
+    "id": {
       "type": "string",
       "description": "Globally Unique Identifier for this construct. MUST be a UUIDv4."
     },
-    "_version": {
-      "type": "integer",
-      "description": "The version of this construct."
-    },
-    "_timestamp": {
+    "timestamp": {
       "type": "string",
       "format": "date-time",
       "description": "Time at which this construct was created. MUST be a UTC time."
@@ -39,10 +35,10 @@
       }
     },
     "producer": {
-      "$ref": "../data-model/common/identity.json",
+      "$ref": "identity.json",
       "description": "The original producer of this representation."
     },
-    "_marking_refs": {
+    "marking_refs": {
       "type": "array",
       "description": "The set of markings to be applied to this construct",
       "items": {
@@ -50,5 +46,5 @@
       }
     }
   },
-  "required": ["_type", "_id", "_timestamp"]
+  "required": ["type", "id", "timestamp", "producer"]
 }

@@ -1,9 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-	"title": "configuration",
-  "description": "A system configuration that might lead to compromise",
+	"title": "weakness",
+  "description": "A type of flaw in software",
 	"type": "object",
   "allOf": [
+    {
+      "$ref": "../common/core.json"
+    },
     {
       "$ref": "../common/describable.json"
     },
@@ -11,7 +14,7 @@
       "properties": {
         "impact": {
           "$ref": "../common/impact.json",
-          "description": "The impact of this configuration on operations were it to be exploited"
+          "description": "The impact of this weakness were it to be exploited"
         }
     	}
     }

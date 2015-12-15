@@ -1,8 +1,8 @@
 {
-  "_type":       "sighting",
-  "_id":         "acme.org:sighting-1234",
-  "_version":    1,
-  "_timestamp":   "2015-08-30T00:00:00Z",
+  "type":       "relationship",
+  "id":         "acme.org:sighting-1234",
+  "timestamp":   "2015-08-30T00:00:00Z",
+  "value": "sighting-of",
   "source_ref":  "example.com",
   "target_ref":  "mitre.org:indicator-1234",
   "observed_at": ["2015-08-30T00:00:00Z"],

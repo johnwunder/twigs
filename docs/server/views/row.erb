@@ -1,7 +1,7 @@
 <% if nesting == 0 %>
-  <tr class="<%=cycle('even', 'odd')%> <%= binding_class(title) %>">
+  <tr class="<%=cycle('even', 'odd')%>">
 <% else %>
-  <tr class="for-<%= nester %> indent-<%= nesting %> default-hide <%= binding_class(title) %>">
+  <tr class="for-<%= nester %> indent-<%= nesting %> default-hide">
 <% end %>
   <td class="name-col <% if field[:required]%>required<% end %>"><%= title %></td>
   <td class="type-col"><%= display_type(field, title) %></td>

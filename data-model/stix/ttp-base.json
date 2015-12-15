@@ -4,6 +4,9 @@
 	"type": "object",
   "allOf": [
     {
+      "$ref": "../common/core.json"
+    },
+    {
       "$ref": "../common/describable.json"
     },
     {
