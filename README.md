@@ -1,52 +1,38 @@
 ## Twigs (not STIX)
 
-This is my personal take at my ideal form for the next versions of STIX and CybOX. In other words, this is my personal opinion, informed by what happens on the lists and in OASIS but not following with that consensus.
-
-**Again: These are not STIX or CybOX!! These are not STIX 2.0 and CybOX 3.0!! Official development happens in OASIS. I just wanted a place where I could try things out.**
+http://twigs-cti.herokuapp.com
 
 ## Design Goals
 
-1. Remain true to the core goals of STIX and CybOX. The core of these languages is very solid: the top-level constructs, the data in them, etc. Some of the non-related design decisions could use some work. To that end, my goal is to stay as true as possible to the basic data model while simplifying how that data model is implemented.
-
-2. Solve 90% of the problem with 20% of the code. That means some use cases will be unaddressed. Those can be implemented as extensions to this model.
-
-3. One way to do things. That one way might be more complicated for some usages, but IMO having a single more complicated way is actually less complicated than one more complicated way and one less complicated way.
-
-4. Prefer simple representations whenever possible.
-
-5. Solve use cases we have now, evolve in the future as we expand.
+1. Simplicity
+  * Target the 80%
+  * Easy to implement
+  * Easy to understand
+  * One way of doing things
+1. Reduce Optionality
+  * Support customization in a standardized way
+  * Don’t allow customization everywhere, only where likely to be used
+1. Standardization
+  * Do things the same way across STIX and CybOX
+  * Reuse similar structures across similar yet distinct parts of the model
+1. Modularity
+  * Provide building blocks that can be reused
+  * Ensuring tight cohesion and low coupling
+1. Flexibility
+  * Use modularity to provide flexibility
+  * Flexibility is not as important as simplicity or reducing optionality
+1. Improve Analysis
+  * Explicitly modeled as a graph
+  * Ensure data structures are separate from metadata
+1. STIX 1.x compatibility (i.e., content conversion ala STIX Ramrod)
+  * Upconverting is a higher priority than downconverting
 
 ## High-level decisions
 
-1. Implemented as JSON. XML encourages complexity and a binary encoding is harder to work with. If scale becomes an issue, reconsider. (See #5 above)
+1. Implemented in JSON and JSON Schema per the CTI TC ballot and CTI TC JSON style guide.
 
-2. The data model is layer: an abstract data model, a binding to JSON that adds fields necessary for automated processing, and finally a set of messages that define the actual exchanges.
+1. Add a CTI Common specification for high-level constructs used across all languages.
 
-3. Top-level relationships, and any other references between objects are always by id. In other words, no embedding top-level constructs in other top-level constructs.
+1. The Observable and Event layers are removed from CybOX, which becomes a library of CybOX objects. In STIX, the "Observation" object covers observable instances, and indicator patterning covers observable patterns. Sightings are accomplished using a relationship between an Observation and an Indicator.
 
-4. Data markings are at the object level, no more and no less. More granular markings could be done either by extension or by issuing multiple versions of the object.
-
-5. Refactor CybOX to remove the Observable layer. CybOX becomes just the objects. STIX has a "Sighting" object that's what used to be Observable. Patterning is in Indicator.
-
-6. Add a CTI-Common specification for high-level constructs used across all languages.
-
-7. All top-level objects have a `_type` field that indicate what they are.
-
-8. Remove controlled vocabularies and replace with hardcoded enumerations. In most cases, implement these as a "Statement" that also allows for descriptive text.
-
-## Open Questions
-
-1. Sightings are very tricky:
-  1. Do you sight objects or indicators?
-  2. Do you represent a list of times that it was seen? A single time? A count?
-  3. Do you include the full object or just the fact that something was seen?
-
-2. What do you do about producer?
-
-3. What do you do about versioning?
-
-4. How do you encode allowed relationships?
-
-5. Names vs. titles
-
-6. Patterning in CybOX is unaddressed
+1. Controlled vocabularies are limited, and where used they allow both a hardcoded enum in the STIX default vocabulary as well as an extension value in an external vocabulary.
