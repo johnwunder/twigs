@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "package",
+  "description": "A collection of STIX content",
+	"type": "object",
+  "properties": {
+    "data_markings": {
+      "type": "array",
+      "items": {"$ref": "../common/data-marking.json"}
+    },
+    "producer": {"$ref": "../common/identity.json"},
+    "type": {
+      "type": "string",
+      "enum": ["package"]
+    },
+    "contents": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {"$ref": "attack-pattern.json"},
+          {"$ref": "campaign.json"},
+          {"$ref": "configuration.json"},
+          {"$ref": "course-of-action.json"},
+          {"$ref": "exploit.json"},
+          {"$ref": "incident.json"},
+          {"$ref": "indicator.json"},
+          {"$ref": "infrastructure.json"},
+          {"$ref": "kill-chain.json"},
+          {"$ref": "malware.json"},
+          {"$ref": "observation.json"},
+          {"$ref": "opinion.json"},
+          {"$ref": "persona.json"},
+          {"$ref": "relationship.json"},
+          {"$ref": "report.json"},
+          {"$ref": "threat-actor.json"},
+          {"$ref": "tool.json"},
+          {"$ref": "victim-targeting.json"},
+          {"$ref": "vulnerability.json"},
+          {"$ref": "weakness.json"}
+        ]
+      }
+    }
+  }
+}
