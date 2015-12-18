@@ -44,7 +44,36 @@
       "items": {
         "type": "string"
       }
+    },
+    "structured_markings": {
+      "type": "array",
+      "description": "The set of L2 markings to be applied to this construct",
+      "items": {
+        "type": {"$ref": ""}
+      }
     }
   },
-  "required": ["type", "id", "timestamp", "producer"]
+  "required": ["type", "id", "timestamp", "producer"],
+  "definitions": {
+    "structured-marking": {
+      "description": "A single definition of a structured marking",
+      "properties": {
+        "controlled_structures": {
+          "type": "array",
+          "description": "A list of JSONPath statements, rooted at the top-level object that the structured_markings key is contained in, that the marking_refs apply to.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "marking_refs": {
+          "type": "array",
+          "description": "The set of markings applied to the fields selected by the controlled_structures.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["controlled_structures", "marking_refs"]
+    }
+  }
 }
