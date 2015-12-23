@@ -9,7 +9,7 @@
     },
     {
       "properties": {
-        "type": {
+        "value": {
           "type": "string",
           "description": "The type of relationship being described."
         },
@@ -38,5 +38,5 @@
       }
     }
   ],
-  "required": ["type", "source_ref", "target_ref", "credibility"]
+  "required": ["value", "source_ref", "target_ref", "credibility"]
 }
