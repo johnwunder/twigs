@@ -49,14 +49,16 @@
       "type": "array",
       "description": "The set of L2 markings to be applied to this construct",
       "items": {
-        "type": {"$ref": "#/definitions/structured-marking"}
+        "$ref": "#/definitions/structured-marking"
       }
     }
   },
   "required": ["type", "id", "timestamp", "producer_ref"],
   "definitions": {
     "structured-marking": {
+      "title": "structured-marking",
       "description": "A single definition of a structured marking",
+      "type": "object",
       "properties": {
         "controlled_structures": {
           "type": "array",

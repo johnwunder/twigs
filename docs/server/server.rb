@@ -63,8 +63,6 @@ class SchemaLoader
   end
 
   def resolve_file(file)
-    puts @working_directory
-    puts file.inspect
     File.read(File.join(@working_directory, file))
   end
 
