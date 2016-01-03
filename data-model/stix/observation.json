@@ -25,7 +25,8 @@
           },
           "description": "A list of times that this sighting was observed."
         }
-      }
+      },
+      "required": ["object"]
     }
   ],
   "relationships": {

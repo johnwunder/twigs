@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-	"title": "package",
-  "description": "A collection of STIX content",
+	"title": "announcement",
+  "description": "A bundle of STIX content not explicitly solicited by another party.",
 	"type": "object",
   "properties": {
     "data_markings": {
