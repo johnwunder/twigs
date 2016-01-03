@@ -12,7 +12,8 @@
     },
     {
       "properties": {
-        "_type": {
+        "type": {
+          "type": "string",
           "enum": ["kill-chain"]
         },
         "phases": {
@@ -21,7 +22,8 @@
             "$ref": "kill-chain-phase.json"
           }
         }
-      }
+      },
+      "required": ["phases"]
     }
   ],
   "relationships": {

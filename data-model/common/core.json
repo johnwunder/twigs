@@ -12,6 +12,10 @@
       "type": "string",
       "description": "Globally Unique Identifier for this construct. MUST be a UUIDv4."
     },
+    "revision": {
+      "type": "integer",
+      "description": "The revision number of this construct. MUST be omitted if this is the first version, otherwise required."
+    },
     "timestamp": {
       "type": "string",
       "format": "date-time",

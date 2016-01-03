@@ -8,7 +8,14 @@
       "$ref": "../common/core.json"
     },
     {
+      "$ref": "../common/describable.json"
+    },
+    {
       "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["opinion"]
+        },
         "object_ref": {
           "type": "string",
           "description": "The id of the object to which this opinion refers"
@@ -31,7 +38,7 @@
     }
   ],
   "relationships": {
-    "related": ["attack-pattern", "campaign", "configuration", "course-of-action", "exploit", "incident", "indicator", "infrastructure", "kill-chain", "kill-chain-phase", "malware", "observation", "opinion", "persona", "relationship", "report", "threat_actor", "tool", "victim-targeting", "vulnerability", "weakness"],
+    "related": ["attack-pattern", "campaign", "configuration", "course-of-action", "exploit", "investigation", "indicator", "infrastructure", "kill-chain", "kill-chain-phase", "malware", "observation", "opinion", "persona", "relationship", "report", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
     "equivalent": ["opinion"]
   }
 }

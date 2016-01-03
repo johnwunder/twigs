@@ -12,6 +12,10 @@
     },
     {
       "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["campaign"]
+        },
         "impact": {
           "$ref": "../common/impact.json",
           "description": "The impact of this campaign on operations (assuming the organization is under attack)"
@@ -36,7 +40,7 @@
   "relationships": {
     "attribution": ["threat-actor"],
     "activity": ["course-of-action"],
-    "related": ["campaign", "incident", "malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
+    "related": ["campaign", "investigation", "malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
     "equivalent": ["campaign"]
   }
 }

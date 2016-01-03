@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-	"title": "incident",
-  "description": "Instance of a cyber attack",
+	"title": "investigation",
+  "description": "Investigation of a cyber attack",
 	"type": "object",
   "allOf": [
     {
@@ -12,8 +12,16 @@
     },
     {
       "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["investigation"]
+        },
+        "category": {
+          "type": "string",
+          "enum": ["Investigation", "investigation"]
+        },
         "impact": {
-          "description": "The impact of this incident on operations",
+          "description": "The impact of this attack on operations",
           "$ref": "../common/impact.json"
         }
     	}
@@ -24,7 +32,7 @@
     "implemented-coa": ["course-of-action"],
     "leveraged-ttp": ["malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
     "attribution": ["threat-actor", "campaign"],
-    "related": ["incident", "indicator"],
-    "equivalent": ["incident"]
+    "related": ["investigation", "indicator"],
+    "equivalent": ["investigation"]
   }
 }

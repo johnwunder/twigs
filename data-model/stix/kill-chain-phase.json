@@ -5,13 +5,14 @@
 	"type": "object",
   "allOf": [
     {
-      "$ref": "../common/core.json"
-    },
-    {
       "$ref": "../common/describable.json"
     },
     {
       "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of this kill chain phase"
+        }
       }
     }
   ],

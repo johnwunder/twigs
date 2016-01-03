@@ -9,22 +9,30 @@
     },
     {
       "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["tool"]
+        },
         "compensation_model": {
           "type": "string",
           "description": "The type of compensation model used for this tool."
         },
-        "type": {
+        "kind": {
+          "type": "array",
           "description": "The type of tool being described",
-          "allOf": [
-            {"$ref": "../common/statement.json"},
-            {
-              "properties": {
-                "value": {
-                  "enum": ["Penetration Testing", "Port Scanner", "Traffic Scanner", "Vulnerability Scanner", "Application Scanner", "Password Cracking"]
+          "items": {
+            "allOf": [
+              {"$ref": "../common/statement.json"},
+              {
+                "properties": {
+                  "type": "string",
+                  "value": {
+                    "enum": ["Penetration Testing", "Port Scanner", "Traffic Scanner", "Vulnerability Scanner", "Application Scanner", "Password Cracking"]
+                  }
                 }
               }
-            }
-          ]
+            ]
+          }
         }
       }
     }

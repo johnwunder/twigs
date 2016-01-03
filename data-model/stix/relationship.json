@@ -9,6 +9,10 @@
     },
     {
       "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["relationship"]
+        },
         "value": {
           "type": "string",
           "description": "The type of relationship being described."

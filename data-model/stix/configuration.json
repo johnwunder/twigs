@@ -5,16 +5,17 @@
 	"type": "object",
   "allOf": [
     {
-      "$ref": "../common/core.json"
-    },
-    {
-      "$ref": "../common/describable.json"
+      "$ref": "exploit-target-base.json"
     },
     {
       "properties": {
-        "impact": {
-          "$ref": "../common/impact.json",
-          "description": "The impact of this configuration on operations were it to be exploited"
+        "type": {
+          "type": "string",
+          "enum": ["configuration"]
+        },
+        "cce_id": {
+          "type": "string",
+          "description": "The CCE ID for this configuration"
         }
     	}
     }

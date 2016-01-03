@@ -12,12 +12,9 @@
     },
     {
       "properties": {
-        "item_refs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "References to the items that belong to this report. Any top-level type is valid."
+        "type": {
+          "type": "string",
+          "enum": ["report"]
         }
       }
     }

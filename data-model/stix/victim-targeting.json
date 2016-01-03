@@ -9,13 +9,17 @@
     },
     {
       "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["victim-targeting"]
+        },
         "targets": {
           "type": "array",
           "items": {
             "oneOf": [
               {
                 "properties": {
-                  "_type": {
+                  "type": {
                     "enum": ["identity"]
                   },
                   "target": {
@@ -26,7 +30,7 @@
               },
               {
                 "properties": {
-                  "_type": {
+                  "type": {
                     "enum": ["system"]
                   },
                   "target": {
@@ -76,7 +80,7 @@
               },
               {
                 "properties": {
-                  "_type": {
+                  "type": {
                     "enum": ["information"]
                   },
                   "target": {

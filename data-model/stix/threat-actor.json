@@ -12,6 +12,10 @@
     },
     {
       "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["threat-actor"]
+        },
         "impact": {
           "$ref": "../common/impact.json",
           "description": "The impact that an attack by this threat actor could have on operations."
@@ -20,7 +24,7 @@
           "$ref": "../common/identity.json",
           "description": "The identity of this threat actor"
         },
-        "type": {
+        "kind": {
           "description": "The type of threat actor",
           "allOf": [
             {"$ref": "../common/statement.json"},

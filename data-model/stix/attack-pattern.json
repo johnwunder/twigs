@@ -9,6 +9,10 @@
     },
     {
       "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["attack-pattern"]
+        },
         "capec_id": {
           "type": "string",
           "description": "CAPEC ID for this attack pattern"

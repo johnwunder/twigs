@@ -5,16 +5,17 @@
 	"type": "object",
   "allOf": [
     {
-      "$ref": "../common/core.json"
-    },
-    {
-      "$ref": "../common/describable.json"
+      "$ref": "exploit-target-base.json"
     },
     {
       "properties": {
-        "impact": {
-          "$ref": "../common/impact.json",
-          "description": "The impact of this weakness were it to be exploited"
+        "type": {
+          "type": "string",
+          "enum": ["weakness"]
+        },
+        "cwe_id": {
+          "type": "string",
+          "description": "The CWE ID for this weakness"
         }
     	}
     }

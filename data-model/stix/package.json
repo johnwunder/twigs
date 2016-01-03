@@ -22,7 +22,7 @@
           {"$ref": "configuration.json"},
           {"$ref": "course-of-action.json"},
           {"$ref": "exploit.json"},
-          {"$ref": "incident.json"},
+          {"$ref": "investigation.json"},
           {"$ref": "indicator.json"},
           {"$ref": "infrastructure.json"},
           {"$ref": "kill-chain.json"},
