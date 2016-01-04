@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "id",
+  "description": "The format used for all IDs in TWIGS",
+  "type": "string",
+  "pattern": "^[A-Za-z0-9\\._-]+:[A-Za-z0-9\\._-]+$"
+}

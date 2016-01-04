@@ -18,11 +18,11 @@
           "description": "The type of relationship being described."
         },
         "source_ref": {
-          "type": "string",
+          "$ref": "../common/id.json",
           "description": "The id of the source (from node) of the relationship."
         },
         "target_ref": {
-          "type": "string",
+          "$ref": "../common/id.json",
           "description": "The id of the target (to node) of the relationship"
         },
         "observed_at": {

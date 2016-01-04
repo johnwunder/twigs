@@ -1,0 +1,8 @@
+{
+  "type": "configuration",
+  "id": "example.com:3c879b3f-f3b5-4985-b290-4a7c22917327",
+  "timestamp": "2016-01-04T01:01:01.000000+00:00",
+  "producer_ref": "example.com:example",
+  "title": "CCE-2043-2342",
+  "cce_id": "CCE-2043-2342"
+}

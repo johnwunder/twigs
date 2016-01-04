@@ -11,5 +11,6 @@
       "type": "string",
       "description": "A description for this construct"
     }
-  }
+  },
+  "required": ["title"]
 }

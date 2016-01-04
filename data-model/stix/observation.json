@@ -20,17 +20,19 @@
         "observed_at": {
           "type": "array",
           "items": {
-            "type": "string",
-            "format": "date-time"
+            "$ref": "../common/timestamp.json"
           },
           "description": "A list of times that this sighting was observed."
+        },
+        "observed_at_precision": {
+          "$ref": "../common/timestamp.json#/definitions/precision"
         }
       },
       "required": ["object"]
     }
   ],
   "relationships": {
-    "related": ["attack-pattern", "campaign", "configuration", "course-of-action", "exploit", "investigation", "indicator", "infrastructure", "kill-chain", "kill-chain-phase", "malware", "observation", "persona", "report", "threat_actor", "tool", "victim-targeting", "vulnerability", "weakness"],
+    "related": ["attack-pattern", "campaign", "configuration", "course-of-action", "exploit", "incident", "indicator", "infrastructure", "kill-chain", "kill-chain-phase", "malware", "observation", "persona", "report", "threat_actor", "tool", "victim-targeting", "vulnerability", "weakness"],
     "sighted": ["indicator"],
     "duplicate-of": ["observation"]
   }

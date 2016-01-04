@@ -25,8 +25,8 @@
               {"$ref": "../common/statement.json"},
               {
                 "properties": {
-                  "type": "string",
                   "value": {
+                    "type": "string",
                     "enum": ["Penetration Testing", "Port Scanner", "Traffic Scanner", "Vulnerability Scanner", "Application Scanner", "Password Cracking"]
                   }
                 }

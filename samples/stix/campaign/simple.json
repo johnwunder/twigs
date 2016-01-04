@@ -1,0 +1,16 @@
+{
+  "type": "campaign",
+  "id": "example.com:f3520aed-1153-47bc-a80c-c7d2e3ff949b",
+  "timestamp": "2016-01-04T01:01:01.000000+00:00",
+  "producer_ref": "example.com:example",
+  "title": "Operation Singing Lion",
+  "description": "References threat activity as part of the Operation Singing Lion campaign",
+  "impact": {
+    "level": 3,
+    "intended_effects": ["Economic Advantage"]
+  },
+  "status": {
+    "value": "Historic",
+    "credibility": 4
+  }
+}

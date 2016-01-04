@@ -13,7 +13,7 @@
       "description": "The time at which this message was produced"
     },
     "producer_ref": {
-      "type": "string",
+      "$ref": "../common/id.json",
       "description": "The ID number of the producer of this message"
     },
     "producers": {
@@ -22,7 +22,7 @@
     },
     "data_markings": {
       "type": "array",
-      "items": {"$ref": "../common/data_marking.json"}
+      "items": {"$ref": "../common/data-marking.json"}
     }
   }
 }

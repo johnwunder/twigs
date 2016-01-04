@@ -52,7 +52,7 @@
       <table id="samples-list">
         <tbody>
           <% @schema[:samples].each do |sample| %>
-            <tr><td><a href="/samples/<%=@schema[:title] + '/' + sample %>"><%= sample.split('/').last %></td></tr>
+            <tr><td><a href="/samples<%= sample %>"><%= sample.split('/').last %></td></tr>
           <% end %>
         </tbody>
       </table>

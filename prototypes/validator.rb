@@ -10,10 +10,12 @@ class TwigsValidator
 
   def validate(json)
     json = JSON.load(json)
-    @schema = @type_schemas[json['type']]
-    raise "Unable to find schema for #{json['type']}" if @schema.nil?
+    schema = @type_schemas[json['type']]
+    raise "Unable to find schema for #{json['type']}" if schema.nil?
 
-    JSON::Validator.fully_validate(json, @schema)
+    results = nil
+    results = JSON::Validator.fully_validate(schema, json)
+    return results
   end
 
   def map_types(args)
@@ -21,11 +23,24 @@ class TwigsValidator
     schemas = Dir.glob(File.join(args[:data_model_schemas], "**", "*.json"))
 
     schemas.each do |schema|
-      types[schema.split('/').last.gsub('.json', '')] = JSON.load(File.read(schema))
+      types[schema.split('/').last.gsub('.json', '')] = schema
     end
 
     return types
   end
 end
 
-TwigsValidator.new
+class TwigsSchemaReader
+  def read(location)
+    puts "Resolving: #{location}"
+    uri  = Addressable::URI.parse(location.to_s)
+    body = if uri.scheme.nil? || uri.scheme == 'file'
+        uri = Addressable::URI.convert_path(uri.path)
+        File.read(Addressable::URI.unescape(Pathname.new(uri.path).expand_path.to_s))
+      else
+        read_uri(uri)
+      end
+
+    JSON::Schema.new(JSON::Validator.parse(body), uri)
+  end
+end

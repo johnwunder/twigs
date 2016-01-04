@@ -4,7 +4,7 @@
   "description": "A bundle of STIX content not explicitly solicited by another party.",
 	"type": "object",
   "allOf": [
-    {"$ref": "message_base.json"},
+    {"$ref": "message-base.json"},
     {
       "properties": {
         "contents": {

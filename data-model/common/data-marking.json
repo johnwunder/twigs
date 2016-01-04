@@ -4,11 +4,11 @@
   "type": "object",
   "properties": {
     "id": {
-      "type": "string",
+      "$ref": "id.json",
       "description": "The ID of this marking"
     },
     "producer_ref": {
-      "type": "string",
+      "$ref": "id.json",
       "description": "The producer of this marking"
     }
   },

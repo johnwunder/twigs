@@ -30,9 +30,9 @@ get "/:namespace/:schema" do
   erb :page, :locals => {:page_title => title}
 end
 
-get "/samples/:schema/:sample" do
+get "/samples/:namespace/:schema/:sample" do
   content_type :json
-  File.read(File.join($samples_path, params[:schema], params[:sample]))
+  File.read(File.join($samples_path, params[:namespace], params[:schema], params[:sample]))
 end
 
 def top_level_components(glob)
@@ -80,7 +80,7 @@ class SchemaLoader
       description: json['description'],
       type: json['type'],
       relationships: json['relationships'],
-      samples: load_samples(json['title'])
+      samples: load_samples(schema)
     }
 
     if json['type'] == 'array'
@@ -96,7 +96,14 @@ class SchemaLoader
   end
 
   def load_samples(schema)
-    Dir.glob(File.join($samples_path, schema, '*.json')).map {|path| path.split('/').last}
+    parts = schema.split('/')
+
+    if parts[0] == "stix" || parts[0] == "cybox" || parts[0] == "messages"
+      dir = parts[0] + "/" + parts[1].gsub('.json', '')
+      Dir.glob(File.join($samples_path, dir, '*.json')).map {|path| path.gsub($samples_path, '')}
+    else
+      []
+    end
   end
 
   def handle_all_of(json)
