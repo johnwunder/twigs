@@ -16,7 +16,8 @@ $data_model_path = File.expand_path(File.join(File.dirname(__FILE__), '..', '..'
 $samples_path = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'samples'))
 
 get "/" do
-  @top_level_components = top_level_components
+  @top_level_components = top_level_components("{stix,cybox}/*.json")
+  @messages = top_level_components("messages/*.json")
 
   erb :home
 end
@@ -24,7 +25,9 @@ end
 get "/:namespace/:schema" do
   @schema = SchemaLoader.load_and_parse_schema(File.join(params[:namespace], params[:schema]) + ".json", $data_model_path)
 
-  erb :page, :locals => {:page_title => "core data model"}
+  title = params[:namespace] == 'messages' ? 'messages' : 'core data model'
+
+  erb :page, :locals => {:page_title => title}
 end
 
 get "/samples/:schema/:sample" do
@@ -32,11 +35,11 @@ get "/samples/:schema/:sample" do
   File.read(File.join($samples_path, params[:schema], params[:sample]))
 end
 
-def top_level_components
+def top_level_components(glob)
   schemas = []
 
   Dir.chdir($data_model_path) do
-    schemas = Dir.glob("{stix,cybox}/*.json").reject {|sf| sf =~ /_base\.json/}.map do |schema_file|
+    schemas = Dir.glob(glob).reject {|sf| sf =~ /_base\.json/}.map do |schema_file|
       json = JSON.load(File.read(schema_file))
 
       {
@@ -214,7 +217,7 @@ helpers do
       "array &lt;#{display_type(field[:items], title)}&gt;"
     elsif field[:type].nil? || field[:type] == 'object'
       if field[:options]
-        "one of: #{field[:options].map {|o| o[:title]}.join(', ')}"
+        "one of: " + field[:options].map {|o| "<a href='#' data-expand='#{o[:title]}' class='expander inline'>#{o[:title] || 'object'}</a>"}.join(', ')
       elsif field[:fields].nil? || field[:fields].empty?
         'object'
       else

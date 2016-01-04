@@ -41,6 +41,6 @@
     "attribution": ["threat-actor"],
     "activity": ["course-of-action"],
     "related": ["campaign", "investigation", "malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
-    "equivalent": ["campaign"]
+    "duplicate-of": ["campaign"]
   }
 }

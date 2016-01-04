@@ -17,6 +17,6 @@
     }
   ],
   "relationships": {
-    "equivalent": ["kill-chain-phase"]
+    "duplicate-of": ["kill-chain-phase"]
   }
 }

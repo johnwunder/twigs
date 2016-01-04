@@ -31,6 +31,26 @@
             <% end %>
         </table>
       </section>
+      <section>
+        <h2>Messages</h2>
+        <p>Messages define data exchanges targeted at specific use cases. They leverage the data model to define the content.</p>
+        <br />
+        <table id="messages-list">
+          <thead>
+            <tr>
+              <th>Message</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @messages.each do |component| %>
+              <tr>
+                <td><a href="<%= component[:link] %>"><%= component[:title] %></a></td>
+                <td><%= component[:description] %></td>
+              </tr>
+            <% end %>
+        </table>
+      </section>
     </div>
   </body>
 </html>

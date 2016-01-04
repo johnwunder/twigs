@@ -32,6 +32,6 @@
   "relationships": {
     "related": ["attack-pattern", "campaign", "configuration", "course-of-action", "exploit", "investigation", "indicator", "infrastructure", "kill-chain", "kill-chain-phase", "malware", "observation", "persona", "report", "threat_actor", "tool", "victim-targeting", "vulnerability", "weakness"],
     "sighted": ["indicator"],
-    "equivalent": ["observation"]
+    "duplicate-of": ["observation"]
   }
 }

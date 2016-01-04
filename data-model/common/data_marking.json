@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "data-marking",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The ID of this marking"
+    },
+    "producer_ref": {
+      "type": "string",
+      "description": "The producer of this marking"
+    }
+  },
+  "required": ["id", "producer_ref"]
+}

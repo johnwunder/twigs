@@ -22,6 +22,6 @@
   "relationships": {
     "related": ["report"],
     "parent": ["report"],
-    "equivalent": ["report"]
+    "duplicate-of": ["report"]
   }
 }

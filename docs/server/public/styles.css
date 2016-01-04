@@ -166,3 +166,7 @@ ul {
 tr.binding {
 	opacity: 0.5;
 }
+
+tr.first {
+	border-top: 3px solid black;
+}

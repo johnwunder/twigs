@@ -16,15 +16,15 @@
         "identity": {
           "$ref": "../common/identity.json",
           "description": "The identifying characteristics that this persona describes."
-        },
-        "required": ["identity"]
-      }
+        }
+      },
+      "required": ["identity"]
     }
   ],
   "relationships": {
     "related": ["malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
     "kill-chain-phases": ["kill-chain-phase"],
     "exploits": ["exploit-target"],
-    "equivalent": ["exploit"]
+    "duplicate-of": ["exploit"]
   }
 }

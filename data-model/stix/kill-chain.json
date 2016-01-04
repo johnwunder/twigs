@@ -27,6 +27,6 @@
     }
   ],
   "relationships": {
-    "equivalent": ["kill-chain"]
+    "duplicate-of": ["kill-chain"]
   }
 }

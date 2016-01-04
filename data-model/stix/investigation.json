@@ -33,6 +33,6 @@
     "leveraged-ttp": ["malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
     "attribution": ["threat-actor", "campaign"],
     "related": ["investigation", "indicator"],
-    "equivalent": ["investigation"]
+    "duplicate-of": ["investigation"]
   }
 }

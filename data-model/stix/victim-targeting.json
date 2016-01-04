@@ -119,6 +119,6 @@
     "related": ["malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
     "kill-chain-phases": ["kill-chain-phase"],
     "exploits": ["exploit-target"],
-    "equivalent": ["victim-targeting"]
+    "duplicate-of": ["victim-targeting"]
   }
 }

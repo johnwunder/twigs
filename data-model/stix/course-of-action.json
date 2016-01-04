@@ -95,7 +95,7 @@
   ],
   "relationships": {
     "related": ["course-of-action"],
-    "equivalent": ["course-of-action"]
+    "duplicate-of": ["course-of-action"]
   },
   "required": ["stage", "type", "objective"]
 }

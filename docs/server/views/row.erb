@@ -1,14 +1,25 @@
 <% if nesting == 0 %>
   <tr class="<%=cycle('even', 'odd')%>">
 <% else %>
-  <tr class="for-<%= nester %> indent-<%= nesting %> default-hide">
+  <tr class="for-<%= nester %> indent-<%= nesting %> default-hide <%= 'first' if first %> ">
 <% end %>
   <td class="name-col <% if field[:required]%>required<% end %>"><%= title %></td>
   <td class="type-col"><%= display_type(field, title) %></td>
   <td class="desc-col"><%= field[:description] %></td>
 </tr>
 <% if field[:type] == 'object' || field[:type] == 'array' && field[:items][:type] == 'object' %>
+  <% first = true %>
   <% get_fields(field).each do |child_title, child_field| %>
-    <%= erb :row, :locals => {:title => child_title, :field => child_field, :nesting => nesting+1, :nester => title} %>
+    <%= erb :row, :locals => {:title => child_title, :field => child_field, :nesting => nesting+1, :nester => title, :first => first} %>
+    <% first = false %>
+  <% end %>
+<% end %>
+<% if options = (field[:options] || (field[:items] && field[:items][:options])) %>
+  <% options.each do |option| %>
+    <% first = true %>
+    <% get_fields(option).each do |child_title, child_field| %>
+      <%= erb :row, :locals => {:title => child_title, :field => child_field, :nesting => nesting+1, :nester => option[:title], :first => first} %>
+      <% first = false %>
+    <% end %>
   <% end %>
 <% end %>

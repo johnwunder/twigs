@@ -24,6 +24,6 @@
     "related": ["malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
     "kill-chain-phases": ["kill-chain-phase"],
     "targets": ["exploit-target"],
-    "equivalent": ["attack-pattern"]
+    "duplicate-of": ["attack-pattern"]
   }
 }

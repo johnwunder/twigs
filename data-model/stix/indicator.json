@@ -91,6 +91,6 @@
     "suggested": ["course-of-action"],
     "kill-chain-phase": ["kill-chain-phase"],
     "related": ["indicator"],
-    "equivalent": ["indicator"]
+    "duplicate-of": ["indicator"]
   }
 }

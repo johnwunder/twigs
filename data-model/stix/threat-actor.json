@@ -140,7 +140,7 @@
       "relationships": {
         "observed-ttp": ["malware", "attack-pattern"],
         "associated": ["campaign", "threat-actor"],
-        "equivalent": ["threat-actor"]
+        "duplicate-of": ["threat-actor"]
       }
     }
   ]
