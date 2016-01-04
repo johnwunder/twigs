@@ -1,0 +1,89 @@
+{
+  "type": "announcement",
+  "producer_ref": "example.com:example",
+  "id": "example.com:495c4c04-b5d8-11e3-b7bb-000c29789db9",
+  "timestamp": "2014-02-20T09:00:00.000000+00:00",
+  "contents": [
+    {
+      "type": "campaign",
+      "id": "example.com:e5268b6e-4931-42f1-b379-87f48eb41b1e",
+      "producer_ref": "example.com:example",
+      "timestamp": "2014-08-08T15:50:10.983728+00:00",
+      "title": "Compromise of ATM Machines"
+    },
+    {
+      "type": "victim-targeting",
+      "id": "example.com:2d1c6ab3-5e4e-48ac-a32b-f0c01c2836a8",
+      "producer_ref": "example.com:example",
+      "timestamp": "2014-08-08T15:50:10.983728+00:00",
+      "title": "Customer PII and Financial Data",
+      "targets": [
+        {
+          "type": "information",
+          "target": {
+            "value": "Information Assets - Financial Data"
+          }
+        }
+      ]
+    },
+    {
+      "type": "threat-actor",
+      "id": "example.com:56f3f0db-b5d5-431c-ae56-c18f02caf500",
+      "timestamp": "2014-08-08T15:50:10.983728+00:00",
+      "title": "People behind the intrusion",
+      "producer_ref": "example.com:example"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "relationship",
+      "id": "example.com:9b6c5a74-230f-4884-b0da-aae9b4a7d8d0",
+      "producer_ref": "example.com:example",
+      "timestamp": "2014-08-08T15:50:10.983728+00:00",
+      "source_ref": "example.com:e5268b6e-4931-42f1-b379-87f48eb41b1e",
+      "target_ref": "example.com:56f3f0db-b5d5-431c-ae56-c18f02caf500",
+      "value": "attribution",
+      "credibility": 5
+    },
+    {
+      "type": "relationship",
+      "id": "example.com:37cbeaae-8ce6-4de0-8324-86b8b6706517",
+      "producer_ref": "example.com:example",
+      "timestamp": "2014-08-08T15:50:10.983728+00:00",
+      "source_ref": "example.com:e5268b6e-4931-42f1-b379-87f48eb41b1e",
+      "target_ref": "example.com:2d1c6ab3-5e4e-48ac-a32b-f0c01c2836a8",
+      "value": "related",
+      "credibility": 5
+    },
+    {
+      "type": "relationship",
+      "id": "example.com:17cbd6f7-3f3f-44de-8f86-c1ed5538f989",
+      "producer_ref": "example.com:example",
+      "timestamp": "2014-08-08T15:50:10.983728+00:00",
+      "source_ref": "example.com:e5268b6e-4931-42f1-b379-87f48eb41b1e",
+      "target_ref": "example.com:229ab6ba-0eb2-415b-bdf2-079e6b42f51e",
+      "value": "related",
+      "credibility": 5
+    },
+    {
+      "type": "relationship",
+      "id": "example.com:c46587a6-cdb5-46af-a448-512ba33896d7",
+      "producer_ref": "example.com:example",
+      "timestamp": "2014-08-08T15:50:10.983728+00:00",
+      "source_ref": "example.com:e5268b6e-4931-42f1-b379-87f48eb41b1e",
+      "target_ref": "example.com:517cf274-038d-4ed4-a3ec-3ac18ad9db8a",
+      "value": "related",
+      "credibility": 5
+    },
+    {
+      "type": "relationship",
+      "id": "example.com:30211865-5f1d-4ae9-9f4d-5a1afdb654ca",
+      "producer_ref": "example.com:example",
+      "timestamp": "2014-08-08T15:50:10.983728+00:00",
+      "source_ref": "example.com:e5268b6e-4931-42f1-b379-87f48eb41b1e",
+      "target_ref": "example.com:7d8cf96f-91cb-42d0-a1e0-bfa38ea08621",
+      "value": "related",
+      "credibility": 5
+    }
+  ]
+}

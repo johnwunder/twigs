@@ -16,7 +16,7 @@
               {"$ref": "../stix/configuration.json"},
               {"$ref": "../stix/course-of-action.json"},
               {"$ref": "../stix/exploit.json"},
-              {"$ref": "../stix/investigation.json"},
+              {"$ref": "../stix/incident.json"},
               {"$ref": "../stix/indicator.json"},
               {"$ref": "../stix/infrastructure.json"},
               {"$ref": "../stix/kill-chain.json"},
