@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "external",
+  "description": "A structure to represent external data (e.g. binary, XML)",
+  "type": "object",
+  "properties": {
+    "base64": {
+      "type": "boolean",
+      "description": "Whether or not the data is base64 encoded (required for binary data)"
+    },
+    "content_type": {
+      "type": "string",
+      "description": "MIME type of the external data"
+    },
+    "charset": {
+      "type": "string",
+      "description": "For content that has an encoding, the charset of the encoded content"
+    },
+    "content": {
+      "type": "string",
+      "description": "The content itself. Content must either be base64 encoded and base64 must be set to true or it must be escaped per JSON string escape rules."
+    }
+  },
+  "required": ["base64", "content_type", "content"]
+}

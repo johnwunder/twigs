@@ -51,6 +51,26 @@
             <% end %>
         </table>
       </section>
+      <section>
+        <h2>Examples</h2>
+        <p>These sample documents are meant to be illustrative. The "idiom" examples align with idioms from stixproject.github.io.</p>
+        <br />
+        <table id="samples-list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @samples.each do |sample| %>
+              <tr>
+                <td><a href="<%= sample[:link] %>"><%= sample[:title] %></a></td>
+                <td><%= sample[:category] %></td>
+              </tr>
+            <% end %>
+        </table>
+      </section>
     </div>
   </body>
 </html>

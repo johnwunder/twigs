@@ -10,8 +10,13 @@
     {
       "properties": {
         "pattern": {
-          "$ref": "#/definitions/pattern",
-          "description": "The pattern used to identify the presence of this indicator"
+          "description": "The pattern used to identify the presence of this indicator",
+          "anyOf": [
+            {"$ref": "#/definitions/patterns/twigs"},
+            {"$ref": "#/definitions/patterns/snort"},
+            {"$ref": "#/definitions/patterns/snort_so"},
+            {"$ref": "#/definitions/patterns/yara"}
+          ]
         },
         "start_time": {
           "type": "string",
@@ -32,32 +37,96 @@
   ],
   "required": ["pattern"],
   "definitions": {
-    "pattern": {
-      "title": "pattern",
-      "type": "object",
-      "properties": {
-        "operator": {
-          "type": "string",
-          "enum": ["AND", "OR"]
-        },
-        "operands": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/pattern"
-              },
-              {
-                "$ref": "#/definitions/object"
-              },
-              {
-                "$ref": "#/definitions/test_mechanism"
-              }
-            ]
+    "patterns": {
+      "twigs": {
+        "title": "twigs",
+        "description": "A pattern that leverages native CybOX objects to allow pattern matching",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of pattern",
+            "enum": ["twigs"]
+          },
+          "properties": {
+            "type": "object",
+            "description": "A list of properties that are applied in the condition",
+            "additionalProperties": {
+              "$ref": "#/definitions/patterns/property"
+            }
+          },
+          "conditions": {
+            "type": "string",
+            "description": "The string conditions for when this indicator should match"
           }
         }
       },
-      "required": ["operator", "operands"]
+      "property": {
+        "title": "twigs-prop",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The path to a CybOX object property"
+          },
+          "condition": {
+            "type": "string",
+            "description": "The condition by which the property should match the value"
+          },
+          "value": {
+            "type": "string",
+            "description": "The value of the field to be matched against"
+          }
+        }
+      },
+      "snort": {
+        "title": "snort",
+        "description": "A pattern for snort rules",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of pattern",
+            "enum": ["snort"]
+          },
+          "rules": {
+            "type": "array",
+            "description": "The set of snort rules to match this indicator",
+            "items": "string"
+          }
+        }
+      },
+      "snort_so": {
+        "title": "snort-so",
+        "description": "A pattern for snort rules",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of pattern",
+            "enum": ["snort-so"]
+          },
+          "rule_stub": {
+            "type": "string",
+            "description": "The plain text rule stub"
+          },
+          "rule_binary": {
+            "$ref": "../common/external.json"
+          }
+        }
+      },
+      "yara": {
+        "title": "yara",
+        "description": "A pattern for snort rules",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of pattern",
+            "enum": ["yara"]
+          },
+          "rules": {
+            "type": "array",
+            "description": "The set of YARA rules to match this indicator",
+            "items": "string"
+          }
+        }
+      }
     },
     "object": {
       "title": "object",

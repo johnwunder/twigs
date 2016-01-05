@@ -16,8 +16,9 @@ $data_model_path = File.expand_path(File.join(File.dirname(__FILE__), '..', '..'
 $samples_path = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'samples'))
 
 get "/" do
-  @top_level_components = top_level_components("{stix,cybox}/*.json")
-  @messages = top_level_components("messages/*.json")
+  @top_level_components = top_level_components("{stix,cybox}/*.json").sort {|a, b| a[:title] <=> b[:title]}
+  @messages = top_level_components("messages/*.json").sort {|a, b| a[:title] <=> b[:title]}
+  @samples = samples.sort {|a, b| a[:title] <=> b[:title]}
 
   erb :home
 end
@@ -30,9 +31,30 @@ get "/:namespace/:schema" do
   erb :page, :locals => {:page_title => title}
 end
 
-get "/samples/:namespace/:schema/:sample" do
+get "/samples/*" do
   content_type :json
-  File.read(File.join($samples_path, params[:namespace], params[:schema], params[:sample]))
+  path = File.join($samples_path, params[:splat])
+  if File.absolute_path(path).start_with?($samples_path)
+    File.read(path)
+  else
+    raise "Nope, don't do path traversals"
+  end
+end
+
+def samples
+  samples = []
+
+  Dir.chdir($samples_path) do
+    samples = Dir.glob("**/*.json").map do |sample_file|
+      {
+        title: sample_file.split('/').last.gsub(".json", ""),
+        category: sample_file.split('/')[-2],
+        link: "/samples/#{sample_file}"
+      }
+    end
+  end
+
+  return samples
 end
 
 def top_level_components(glob)
@@ -196,7 +218,14 @@ class SchemaLoader
   def resolve_ref(ref)
     if ref =~ /^#/
       parts = ref.split('/')
-      definition = @current_schema[parts[1]][parts[2]]
+
+      if parts.length == 3
+        definition = @current_schema[parts[1]][parts[2]]
+      else
+        definition = @current_schema[parts[1]][parts[2]][parts[3]]
+      end
+
+      puts definition.inspect
 
       if @current_type.include?(definition['title'])
         {
