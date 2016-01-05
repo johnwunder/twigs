@@ -36,6 +36,12 @@
     "description": {
       "type": "string",
       "description": "A prose description of the impact."
+    },
+    "credibility": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 6,
+      "description": "The credibility of this statement, using the Admirality scale"
     }
   }
 }
