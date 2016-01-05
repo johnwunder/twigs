@@ -58,6 +58,6 @@
     "kill-chain-phases": ["kill-chain-phase"],
     "exploits": ["exploit-target"],
     "duplicate-of": ["infrastructure"],
-    "characterized-by": ["indicator"]
+    "characterized-by": ["asset"]
   }
 }

@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "asset",
+  "description": "Something of value owned by an organization",
+	"type": "object",
+  "allOf": [
+    {
+      "$ref": "../common/core.json"
+    },
+    {
+      "$ref": "../common/describable.json"
+    }
+  ],
+  "relationships": {
+    "related": ["asset"],
+    "duplicate-of": ["asset"]
+  }
+}
