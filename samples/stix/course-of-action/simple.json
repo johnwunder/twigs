@@ -1,7 +1,7 @@
 {
   "type": "course-of-action",
   "id": "example.com:7a02e69c-6363-4871-88d3-32fe1d5557e1",
-  "timestamp": "2016-01-04T01:01:01.000000+00:00",
+  "created_at": "2016-01-04T01:01:01.000000+00:00",
   "producer_ref": "example.com:example",
   "title": "Patch your system",
   "stage": "Remedy",
@@ -9,5 +9,5 @@
   "objective": {
     "description": "Prevent the system from being hacked",
     "applicability_confidence": 3
-  }  
+  }
 }

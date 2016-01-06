@@ -2,12 +2,12 @@
   "type": "announcement",
   "producer_ref": "example.com:example",
   "id": "example.com:48a276f7-a8d7-bba2-3575-e8a63fcd489",
-  "timestamp": "2014-02-20T09:00:00.000000+00:00",
+  "created_at": "2014-02-20T09:00:00.000000+00:00",
   "contents": [
     {
       "type": "indicator",
       "id": "example.com:23e715a9-24c8-4b21-ba5b-f564d2edc660",
-      "timestamp": "2015-07-20T19:52:13.853585+00:00",
+      "created_at": "2015-07-20T19:52:13.853585+00:00",
       "title": "File Reputation for SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "producer_ref": "example.com:example",
       "pattern": {
@@ -30,7 +30,7 @@
     {
       "type": "malware",
       "id": "example.com:14975dea-86cd-4211-a5f8-9c2e4daab69a",
-      "timestamp": "2015-07-20T19:52:13.853585+00:00",
+      "created_at": "2015-07-20T19:52:13.853585+00:00",
       "producer_ref": "example.com:example",
       "title": "Malicious File",
       "impact": {
@@ -44,7 +44,7 @@
       "id": "example.com:23e715a9-24c8-4b21-ba5b-f564d2edc661",
       "type": "relationship",
       "producer_ref": "example.com:example",
-      "timestamp": "2015-07-20T19:52:13.853585+00:00",
+      "created_at": "2015-07-20T19:52:13.853585+00:00",
       "source_ref": "example.com:23e715a9-24c8-4b21-ba5b-f564d2edc660",
       "target_ref": "example.com:14975dea-86cd-4211-a5f8-9c2e4daab69a",
       "credibility": 6,

@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "information-source",
+  "type": "object",
+  "properties": {
+    "id": {
+      "$ref": "id.json"
+    },
+    "identity": {
+      "$ref": "identity.json"
+    },
+    "tool": {
+      "type": "object"
+    }
+  },
+  "required": ["identity"]
+}

@@ -61,7 +61,7 @@ def top_level_components(glob)
   schemas = []
 
   Dir.chdir($data_model_path) do
-    schemas = Dir.glob(glob).reject {|sf| sf =~ /_base\.json/}.map do |schema_file|
+    schemas = Dir.glob(glob).reject {|sf| sf =~ /-base\.json/}.map do |schema_file|
       json = JSON.load(File.read(schema_file))
 
       {
@@ -102,7 +102,8 @@ class SchemaLoader
       description: json['description'],
       type: json['type'],
       relationships: json['relationships'],
-      samples: load_samples(schema)
+      samples: load_samples(schema),
+      'definitions' => json['definitions']
     }
 
     if json['type'] == 'array'
@@ -215,17 +216,17 @@ class SchemaLoader
     return existing_list
   end
 
-  def resolve_ref(ref)
+  def resolve_ref(ref, schema = @current_schema)
     if ref =~ /^#/
-      parts = ref.split('/')
+      parts = ref.split('/')[1..-1]
 
-      if parts.length == 3
-        definition = @current_schema[parts[1]][parts[2]]
-      else
-        definition = @current_schema[parts[1]][parts[2]][parts[3]]
+      definition = schema
+      parts.each do |part|
+        definition = definition[part]
+        if definition.nil?
+          raise "Unable to find definition for #{parts.inspect} in #{schema.inspect}"
+        end
       end
-
-      puts definition.inspect
 
       if @current_type.include?(definition['title'])
         {
@@ -242,7 +243,14 @@ class SchemaLoader
         }
       end
     else
-      self.class.load_and_parse_schema(ref, @working_directory)
+      url, local = ref.split('#')
+      schema = self.class.load_and_parse_schema(url, @working_directory)
+
+      if !local.nil?
+        resolve_ref("##{local}", schema)
+      else
+        schema
+      end
     end
   end
 end
@@ -263,6 +271,14 @@ helpers do
       "<em>[#{field[:values].map {|v| '"' + v + '"'}.join(', ')}]</em>"
     else
       field[:type]
+    end
+  end
+
+  def subdued_class(field)
+    if ['id', 'type', 'revision', 'created_at', 'external_ids', 'producer_ref', 'marking_refs', 'structured_markings'].include?(field)
+      'subdued'
+    else
+      ''
     end
   end
 

@@ -4,10 +4,6 @@
   "description": "A structure to represent external data (e.g. binary, XML)",
   "type": "object",
   "properties": {
-    "base64": {
-      "type": "boolean",
-      "description": "Whether or not the data is base64 encoded (required for binary data)"
-    },
     "content_type": {
       "type": "string",
       "description": "MIME type of the external data"

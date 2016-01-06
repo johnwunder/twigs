@@ -171,3 +171,7 @@ tr.binding {
 tr.first {
 	border-top: 3px solid black;
 }
+
+.subdued {
+	opacity: 0.4;
+}

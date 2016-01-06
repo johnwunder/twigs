@@ -8,7 +8,7 @@
       "type": "string",
       "description": "ID for this message"
     },
-    "timestamp": {
+    "created_at": {
       "type": "string",
       "description": "The time at which this message was produced"
     },

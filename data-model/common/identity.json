@@ -2,14 +2,8 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "identity",
   "type": "object",
-  "properties": {
-    "id": {
-      "$ref": "id.json"
-    },
-    "title": {
-      "type": "string",
-      "description": "The title for this identity"
-    }
-  },
+  "allOf": [
+    {"$ref": "describable.json"}
+  ],
   "required": ["title"]
 }

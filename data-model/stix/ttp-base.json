@@ -7,7 +7,7 @@
       "$ref": "../common/core.json"
     },
     {
-      "$ref": "../common/describable.json#"
+      "$ref": "../common/describable.json"
     },
     {
       "properties": {
