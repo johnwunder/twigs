@@ -9,10 +9,41 @@
     },
     {
       "$ref": "../common/describable.json"
+    },
+    {
+      "properties": {
+        "variety": {
+          "type": "string",
+          "description": "The type of asset this represents",
+          "enum": ["Server", "Desktop", "Networking"]
+        },
+        "ownership": {
+          "type": "string",
+          "description": "The ownership category for this asset"
+        },
+        "management": {
+          "type": "string",
+          "description": "The management category for this asset"
+        },
+        "compromised": {
+          "type": "boolean",
+          "description": "Whether or not this asset has been compromised"
+        },
+        "owner_aware": {
+          "type": "boolean",
+          "description": "Whether or not the owner is aware that this asset has been compromised"
+        },
+        "technical_characteristics": {
+          "$ref": "../cybox/characterization.json"
+        }
+      }
     }
   ],
   "relationships": {
     "related": ["asset"],
-    "duplicate-of": ["asset"]
+    "duplicate-of": ["asset"],
+    "owned-by": ["identity"],
+    "managed-by": ["identity"],
+    "compromised-by": ["threat-actor"]
   }
 }

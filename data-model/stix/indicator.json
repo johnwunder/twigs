@@ -156,7 +156,7 @@
     }
   },
   "relationships": {
-    "indicated": ["malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona", "campaign", "threat-actor"],
+    "indicated": ["malware", "attack-pattern", "exploit", "victim-targeting", "malicious-tool", "malicious-infrastructure", "persona", "campaign", "threat-actor"],
     "suggested": ["course-of-action"],
     "kill-chain-phase": ["kill-chain-phase"],
     "related": ["indicator"],

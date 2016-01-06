@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-	"title": "infrastructure",
+	"title": "malicious-infrastructure",
   "description": "Attacker backend resources used to execute attacks",
 	"type": "object",
   "allOf": [
@@ -9,6 +9,10 @@
     },
     {
       "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["malicious-infrastructure"]
+        },
         "kind": {
           "type": "array",
           "description": "The type of infrastructure being described",
@@ -54,10 +58,10 @@
     }
   ],
   "relationships": {
-    "related": ["malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
+    "related": ["malware", "attack-pattern", "exploit", "victim-targeting", "malicious-tool", "malicious-infrastructure", "persona"],
     "kill-chain-phases": ["kill-chain-phase"],
     "exploits": ["exploit-target"],
-    "duplicate-of": ["infrastructure"],
+    "duplicate-of": ["malicious-infrastructure"],
     "characterized-by": ["asset"]
   }
 }

@@ -1,9 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "identity",
+  "title": "tool",
   "type": "object",
   "allOf": [
     {"$ref": "describable.json"}
-  ],
-  "required": ["title"]
+  ]
 }

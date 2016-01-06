@@ -21,7 +21,7 @@
               {"$ref": "../stix/infrastructure.json"},
               {"$ref": "../stix/kill-chain.json"},
               {"$ref": "../stix/malware.json"},
-              {"$ref": "../stix/observation.json"},
+              {"$ref": "../cybox/observation.json"},
               {"$ref": "../stix/opinion.json"},
               {"$ref": "../stix/persona.json"},
               {"$ref": "../stix/report.json"},
@@ -37,6 +37,12 @@
           "type": "array",
           "items": {
             "$ref": "../stix/relationship.json"
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "../common/information-source.json"
           }
         }
       }

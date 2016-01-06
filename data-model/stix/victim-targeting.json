@@ -23,7 +23,7 @@
                     "enum": ["identity"]
                   },
                   "target": {
-                    "$ref": "../common/identity.json",
+                    "$ref": "../common/identity-characteristics.json",
                     "description": "A non-technical target (e.g. industry sector, nationality)"
                   }
                 },
@@ -119,7 +119,7 @@
     }
   ],
   "relationships": {
-    "related": ["malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
+    "related": ["malware", "attack-pattern", "exploit", "victim-targeting", "malicious-tool", "malicious-infrastructure", "persona"],
     "kill-chain-phases": ["kill-chain-phase"],
     "exploits": ["exploit-target"],
     "duplicate-of": ["victim-targeting"]

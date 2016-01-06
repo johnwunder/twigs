@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "identity",
+  "description": "A person or organization",
+  "type": "object",
+  "allOf": [
+    {"$ref": "../common/core.json"},
+    {"$ref": "../common/identity-characteristics.json"},
+    {
+      "properties": {
+        "type": {
+          "enum": ["identity", "threat-actor"]
+        }
+      }
+    }
+  ],
+  "relationships": {
+    "duplicate-of": ["identity"]
+  }
+}

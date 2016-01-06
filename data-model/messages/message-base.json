@@ -16,9 +16,9 @@
       "$ref": "../common/id.json",
       "description": "The ID number of the producer of this message"
     },
-    "producers": {
+    "sources": {
       "type": "array",
-      "items": {"$ref": "../common/identity.json"}
+      "items": {"$ref": "../common/information-source.json"}
     },
     "data_markings": {
       "type": "array",

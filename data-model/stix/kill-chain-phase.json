@@ -18,5 +18,6 @@
   ],
   "relationships": {
     "duplicate-of": ["kill-chain-phase"]
-  }
+  },
+  "tlo": false
 }

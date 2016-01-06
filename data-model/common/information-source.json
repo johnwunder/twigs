@@ -7,10 +7,10 @@
       "$ref": "id.json"
     },
     "identity": {
-      "$ref": "identity.json"
+      "$ref": "identity-characteristics.json"
     },
     "tool": {
-      "type": "object"
+      "$ref": "tool.json"
     }
   },
   "required": ["identity"]

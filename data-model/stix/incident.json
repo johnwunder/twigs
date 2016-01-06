@@ -30,8 +30,9 @@
   "relationships": {
     "proposed-coa": ["course-of-action"],
     "implemented-coa": ["course-of-action"],
-    "leveraged-ttp": ["malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
+    "leveraged-ttp": ["malware", "attack-pattern", "exploit", "victim-targeting", "malicious-tool", "malicious-infrastructure", "persona"],
     "attribution": ["threat-actor", "campaign"],
+    "has-victim": ["identity"],
     "related": ["incident", "indicator"],
     "duplicate-of": ["incident"],
     "impacts": ["asset"]

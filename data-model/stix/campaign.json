@@ -40,7 +40,7 @@
   "relationships": {
     "attribution": ["threat-actor"],
     "activity": ["course-of-action"],
-    "related": ["campaign", "incident", "malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
+    "related": ["campaign", "incident", "malware", "attack-pattern", "exploit", "victim-targeting", "malicious-tool", "malicious-infrastructure", "persona"],
     "duplicate-of": ["campaign"]
   }
 }

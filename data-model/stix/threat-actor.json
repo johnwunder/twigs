@@ -5,10 +5,7 @@
 	"type": "object",
   "allOf": [
     {
-      "$ref": "../common/core.json"
-    },
-    {
-      "$ref": "../common/describable.json"
+      "$ref": "identity.json"
     },
     {
       "properties": {
@@ -21,7 +18,7 @@
           "description": "The impact that an attack by this threat actor could have on operations."
         },
         "identity": {
-          "$ref": "../common/identity.json",
+          "$ref": "../common/identity-characteristics.json",
           "description": "The identity of this threat actor"
         },
         "kind": {

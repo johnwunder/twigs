@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-	"title": "tool",
+	"title": "malicious-tool",
   "description": "A piece of software used directly by an attacker",
 	"type": "object",
   "allOf": [
@@ -11,7 +11,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["tool"]
+          "enum": ["malicious-tool"]
         },
         "compensation_model": {
           "type": "string",
@@ -38,10 +38,11 @@
     }
   ],
   "relationships": {
-    "related": ["malware", "attack-pattern", "exploit", "victim-targeting", "tool", "infrastructure", "persona"],
+    "related": ["malware", "attack-pattern", "exploit", "victim-targeting", "malicious-tool", "malicious-infrastructure", "persona"],
     "kill-chain-phases": ["kill-chain-phase"],
     "exploits": ["exploit-target"],
-    "duplicate-of": ["tool"]
+    "duplicate-of": ["malicious-tool"],
+    "characterized-by": ["asset"]
   },
   "required": ["type"]
 }

@@ -8,14 +8,13 @@
       "$ref": "../common/core.json"
     },
     {
+      "$ref": "characterization.json"
+    },
+    {
       "properties": {
         "type": {
           "type": "string",
           "enum": ["observation"]
-        },
-        "object": {
-          "type": "object",
-          "description": "CybOX object definition that was observed."
         },
         "observed_at": {
           "type": "array",
@@ -27,12 +26,11 @@
         "observed_at_precision": {
           "$ref": "../common/timestamp.json#/definitions/precision"
         }
-      },
-      "required": ["object"]
+      }
     }
   ],
   "relationships": {
-    "related": ["attack-pattern", "campaign", "configuration", "course-of-action", "exploit", "incident", "indicator", "infrastructure", "kill-chain", "kill-chain-phase", "malware", "observation", "persona", "report", "threat_actor", "tool", "victim-targeting", "vulnerability", "weakness"],
+    "related": ["attack-pattern", "campaign", "configuration", "course-of-action", "exploit", "incident", "indicator", "malicious-infrastructure", "kill-chain", "kill-chain-phase", "malware", "observation", "persona", "report", "threat_actor", "malicious-tool", "victim-targeting", "vulnerability", "weakness"],
     "sighted": ["indicator"],
     "duplicate-of": ["observation"],
     "characterizes": ["asset"]

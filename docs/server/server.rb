@@ -64,12 +64,16 @@ def top_level_components(glob)
     schemas = Dir.glob(glob).reject {|sf| sf =~ /-base\.json/}.map do |schema_file|
       json = JSON.load(File.read(schema_file))
 
-      {
-        title: json['title'],
-        description: json['description'],
-        namespace: schema_file.split('/').first,
-        link: schema_file.gsub('.json', '')
-      }
+      if json['tlo'] == false
+        nil
+      else
+        {
+          title: json['title'],
+          description: json['description'],
+          namespace: schema_file.split('/').first,
+          link: schema_file.gsub('.json', '')
+        }
+      end
     end.compact
   end
 
