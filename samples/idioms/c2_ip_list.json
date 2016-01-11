@@ -1,0 +1,87 @@
+{
+  "type": "announcement",
+  "producer_ref": "example.com:example",
+  "id": "example.com:495c4c04-b5d8-11e3-b7bb-000c29789db9",
+  "created_at": "2014-02-20T09:00:00.000000+00:00",
+  "contents": [
+    {
+      "type": "malicious-infrastructure",
+      "id": "example.com:dd955e08-16d0-6f08-5064-50d9e7a3104d",
+      "producer_ref": "example.com:example",
+      "created_at": "2014-05-08T09:00:00.000000+00:00",
+      "title": "Malware C2 Channel",
+      "kind": {
+        "value": "Communications",
+        "credibility": 4
+      }
+    },
+    {
+      "type": "asset",
+      "id": "example.com:a0777daa-84bf-41e7-89a2-30d7ebb8018d",
+      "producer_ref": "example.com:example",
+      "created_at": "2014-05-08T09:00:00.000000+00:00",
+      "title": "198.51.100.2",
+      "technical_characteristics": {
+        "object": {
+          "ipv4_address": "198.51.100.2"
+        }
+      }
+    },
+    {
+      "type": "asset",
+      "id": "example.com:f39a40bd-2e96-40bc-a55a-b9f71873425c",
+      "producer_ref": "example.com:example",
+      "created_at": "2014-05-08T09:00:00.000000+00:00",
+      "title": "198.51.100.17",
+      "technical_characteristics": {
+        "object": {
+          "ipv4_address": "198.51.100.17"
+        }
+      }
+    },
+    {
+      "type": "asset",
+      "id": "example.com:999c0e56-1825-4ef0-ae34-dddfcf96f14d",
+      "producer_ref": "example.com:example",
+      "created_at": "2014-05-08T09:00:00.000000+00:00",
+      "title": "203.0.113.19",
+      "technical_characteristics": {
+        "object": {
+          "ipv4_address": "203.0.113.19"
+        }
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "type": "relationship",
+      "id": "example.com:7bc8d066-acc2-4bfb-bc08-acbeb0f52c6b",
+      "producer_ref": "example.com:example",
+      "created_at": "2014-05-08T09:00:00.000000+00:00",
+      "source_ref": "example.com:dd955e08-16d0-6f08-5064-50d9e7a3104d",
+      "target_ref": "example.com:a0777daa-84bf-41e7-89a2-30d7ebb8018d",
+      "value": "characterized-by",
+      "credibility": 5
+    },
+    {
+      "type": "relationship",
+      "id": "example.com:7bc8d066-acc2-4bfb-bc08-acbeb0f52c6b",
+      "producer_ref": "example.com:example",
+      "created_at": "2014-05-08T09:00:00.000000+00:00",
+      "source_ref": "example.com:dd955e08-16d0-6f08-5064-50d9e7a3104d",
+      "target_ref": "example.com:f39a40bd-2e96-40bc-a55a-b9f71873425c",
+      "value": "characterized-by",
+      "credibility": 5
+    },
+    {
+      "type": "relationship",
+      "id": "example.com:999c0e56-1825-4ef0-ae34-dddfcf96f14d",
+      "producer_ref": "example.com:example",
+      "created_at": "2014-05-08T09:00:00.000000+00:00",
+      "source_ref": "example.com:dd955e08-16d0-6f08-5064-50d9e7a3104d",
+      "target_ref": "example.com:a0777daa-84bf-41e7-89a2-30d7ebb8018d",
+      "value": "characterized-by",
+      "credibility": 5
+    }
+  ]
+}

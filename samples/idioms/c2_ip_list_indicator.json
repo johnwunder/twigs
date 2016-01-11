@@ -1,0 +1,43 @@
+{
+  "type": "announcement",
+  "id": "example.com:851a164e-c2cb-42d0-af7a-0eebb93355dc",
+  "created_at": "2016-01-06T19:12:02.986050-05:00",
+  "producer_ref": "example.com:example",
+  "contents": [
+    {
+      "type": "indicator",
+      "id": "example.com:628a75ab-7b63-4e88-9175-2c190e38233c",
+      "created_at": "2016-01-06T19:13:17.778545-05:00",
+      "producer_ref": "example.com:example",
+      "pattern": {
+        "type": "twigs",
+        "properties": {
+          "$prop1": {
+            "key": "IPv4Obj:ipv4addr",
+            "condition": "equals",
+            "value": "10.0.0.0"
+          }
+        }
+      }
+    },
+    {
+      "type": "malicious-infrastructure",
+      "id": "example.com:52c6211a-ab03-4fab-b613-f78ffbf8059f",
+      "created_at": "2016-01-06T19:15:32.963619-05:00",
+      "producer_ref": "example.com:example",
+      "title": "Malware C2"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "relationship",
+      "id": "example.com:6d8a1ef3-3b9b-4241-8f57-0f25b5db52d5",
+      "created_at": "2016-01-06T19:16:06.357578-05:00",
+      "producer_ref": "example.com:example",
+      "source_ref": "example.com:628a75ab-7b63-4e88-9175-2c190e38233c",
+      "target_ref": "example.com:52c6211a-ab03-4fab-b613-f78ffbf8059f",
+      "value": "indicated",
+      "credibility": 4
+    }
+  ]
+}

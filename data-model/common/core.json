@@ -61,7 +61,7 @@
       }
     }
   },
-  "required": ["type", "id", "timestamp", "producer_ref"],
+  "required": ["type", "id", "created_at", "producer_ref"],
   "definitions": {
     "structured-marking": {
       "title": "structured-marking",

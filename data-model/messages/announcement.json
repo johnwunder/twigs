@@ -11,14 +11,16 @@
           "type": "array",
           "items": {
             "anyOf": [
+              {"$ref": "../stix/asset.json"},
               {"$ref": "../stix/attack-pattern.json"},
               {"$ref": "../stix/campaign.json"},
               {"$ref": "../stix/configuration.json"},
               {"$ref": "../stix/course-of-action.json"},
               {"$ref": "../stix/exploit.json"},
+              {"$ref": "../stix/identity.json"},
               {"$ref": "../stix/incident.json"},
               {"$ref": "../stix/indicator.json"},
-              {"$ref": "../stix/infrastructure.json"},
+              {"$ref": "../stix/malicious-infrastructure.json"},
               {"$ref": "../stix/kill-chain.json"},
               {"$ref": "../stix/malware.json"},
               {"$ref": "../cybox/observation.json"},
@@ -26,7 +28,7 @@
               {"$ref": "../stix/persona.json"},
               {"$ref": "../stix/report.json"},
               {"$ref": "../stix/threat-actor.json"},
-              {"$ref": "../stix/tool.json"},
+              {"$ref": "../stix/malicious-tool.json"},
               {"$ref": "../stix/victim-targeting.json"},
               {"$ref": "../stix/vulnerability.json"},
               {"$ref": "../stix/weakness.json"}
