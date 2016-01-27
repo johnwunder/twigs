@@ -3,5 +3,5 @@
   "title": "id",
   "description": "The format used for all IDs in TWIGS",
   "type": "string",
-  "pattern": "^[A-Za-z0-9\\._-]+:[A-Za-z0-9\\._-]+$"
+  "pattern": "^[A-Za-z0-9-]+--[A-Za-z0-9-]{36}$"
 }
