@@ -15,29 +15,25 @@
     },
     {
       "properties": {
-        "type": {
+        "variety": {
           "type": "string",
-          "enum": ["campaign"]
+          "enum": [
+            "Media - Documents",
+            "Network - Router",
+            "People - Executive",
+            "Server - Mainframe"
+          ],
+          "description": "What variety of asset this Asset object represents. Field purloined from VERIS Asset classification"
         },
-        "impact": {
-          "$ref": "../common/impact.json",
-          "description": "The impact of this campaign on operations (assuming the organization is under attack)"
+        "compromised": {
+          "type": "boolean",
+          "description": "Is the asset compromised?"
         },
-        "status": {
-          "type": "object",
-          "description": "The status of this campaign (historic, ongoing, or future)",
-          "allOf": [
-            {"$ref": "../common/statement.json"},
-            {
-              "properties": {
-                "value": {
-                  "enum": ["Historic", "Ongoing", "Future"]
-                }
-              }
-            }
-          ]
+        "owner_aware": {
+          "type": "boolean",
+          "description": "Is the owner aware the asset is compromised?"
         }
-    	}
+      }
     }
   ],
   "relationships": {
