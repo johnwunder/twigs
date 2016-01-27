@@ -10,6 +10,9 @@
       "$ref": "../common/describable.json"
     },
     {
+      "$ref": "../common/referenceable.json"
+    },
+    {
       "properties": {
         "impact": {
           "$ref": "../common/impact.json",
