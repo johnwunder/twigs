@@ -11,6 +11,9 @@
       "$ref": "../common/describable.json"
     },
     {
+      "$ref": "../common/referenceable.json"
+    },
+    {
       "properties": {
         "type": {
           "type": "string",

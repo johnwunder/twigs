@@ -8,6 +8,9 @@
       "$ref": "../common/core.json"
     },
     {
+      "$ref": "../common/referenceable.json"
+    },
+    {
       "properties": {
         "pattern": {
           "description": "The pattern used to identify the presence of this indicator",

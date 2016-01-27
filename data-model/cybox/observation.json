@@ -11,6 +11,9 @@
       "$ref": "characterization.json"
     },
     {
+      "$ref": "../common/referenceable.json"
+    },
+    {
       "properties": {
         "type": {
           "type": "string",

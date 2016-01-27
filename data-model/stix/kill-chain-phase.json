@@ -8,6 +8,9 @@
       "$ref": "../common/describable.json"
     },
     {
+      "$ref": "../common/referenceable.json"
+    },
+    {
       "properties": {
         "id": {
           "type": "string",
