@@ -33,7 +33,7 @@
     }
   ],
   "relationships": {
-    "related": ["attack-pattern", "campaign", "configuration", "course-of-action", "exploit", "incident", "indicator", "malicious-infrastructure", "kill-chain", "kill-chain-phase", "malware", "observation", "persona", "report", "threat_actor", "malicious-tool", "victim-targeting", "vulnerability", "weakness"],
+    "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "exploit", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "report", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
     "sighted": ["indicator"],
     "duplicate-of": ["observation"],
     "characterizes": ["asset"]

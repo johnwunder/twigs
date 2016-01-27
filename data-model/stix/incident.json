@@ -36,7 +36,7 @@
     "leveraged-ttp": ["malware", "attack-pattern", "exploit", "victim-targeting", "malicious-tool", "malicious-infrastructure", "persona"],
     "attribution": ["threat-actor", "campaign"],
     "has-victim": ["identity"],
-    "related": ["incident", "indicator"],
+    "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "observation", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
     "duplicate-of": ["incident"],
     "impacts": ["asset"]
   }

@@ -43,7 +43,7 @@
   "relationships": {
     "attribution": ["threat-actor"],
     "activity": ["course-of-action"],
-    "related": ["campaign", "incident", "malware", "attack-pattern", "exploit", "victim-targeting", "malicious-tool", "malicious-infrastructure", "persona"],
+    "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "observation", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
     "duplicate-of": ["campaign"]
   }
 }

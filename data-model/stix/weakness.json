@@ -22,7 +22,7 @@
   ],
   "relationships": {
     "potential-coa": ["course-of-action"],
-    "related": ["configuration", "weakness", "vulnerability"],
+    "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "observation", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
     "duplicate-of": ["weakness"]
   }
 }

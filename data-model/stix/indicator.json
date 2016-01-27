@@ -162,7 +162,7 @@
     "indicated": ["malware", "attack-pattern", "exploit", "victim-targeting", "malicious-tool", "malicious-infrastructure", "persona", "campaign", "threat-actor"],
     "suggested": ["course-of-action"],
     "kill-chain-phase": ["kill-chain-phase"],
-    "related": ["indicator"],
+    "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "observation", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
     "duplicate-of": ["indicator"]
   }
 }

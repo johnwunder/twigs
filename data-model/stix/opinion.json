@@ -36,9 +36,5 @@
         }
       }
     }
-  ],
-  "relationships": {
-    "related": ["attack-pattern", "campaign", "configuration", "course-of-action", "exploit", "incident", "indicator", "malicious-infrastructure", "kill-chain", "kill-chain-phase", "malware", "observation", "opinion", "persona", "relationship", "report", "threat-actor", "malicious-tool", "victim-targeting", "vulnerability", "weakness"],
-    "duplicate-of": ["opinion"]
-  }
+  ]
 }
