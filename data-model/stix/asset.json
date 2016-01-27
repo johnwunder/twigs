@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-	"title": "asset",
+  "title": "asset",
   "description": "Something of value owned by an organization",
-	"type": "object",
+  "type": "object",
   "allOf": [
     {
       "$ref": "../common/core.json"
@@ -15,6 +15,10 @@
     },
     {
       "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["asset"]
+        },
         "variety": {
           "type": "string",
           "enum": [
