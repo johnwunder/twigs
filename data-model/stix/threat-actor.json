@@ -5,7 +5,7 @@
 	"type": "object",
   "allOf": [
     {
-      "$ref": "identity.json"
+      "$ref": "../common/core.json"
     },
     {
       "$ref": "../common/describeable.json"

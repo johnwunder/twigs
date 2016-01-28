@@ -5,11 +5,12 @@
   "type": "object",
   "allOf": [
     {"$ref": "../common/core.json"},
-    {"$ref": "../common/identity-characteristics.json"},
+    {"$ref": "../common/describable.json"},
+    {"$ref": "../common/referenceable.json"},
     {
       "properties": {
         "type": {
-          "enum": ["identity", "threat-actor"]
+          "enum": ["identity"]
         }
       }
     }

@@ -7,7 +7,7 @@
       "$ref": "id.json"
     },
     "identity": {
-      "$ref": "identity-characteristics.json"
+      "$ref": "$../stix/identity.json"
     },
     "tool": {
       "$ref": "tool.json"
