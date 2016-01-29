@@ -139,6 +139,8 @@
       "relationships": {
         "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "observation", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
         "duplicate-of": ["threat-actor"],
+        "suggested-update": ["threat-actor"],
+        "derived-from": ["threat-actor"],
         "identity-of": ["identity"],
         "persona-of": ["identity"],
         "targeted": ["identity"],

@@ -142,6 +142,8 @@
   "relationships": {
     "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "observation", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
     "duplicate-of": ["asset"],
+    "suggested-update": ["asset"],
+    "derived-from": ["asset"],
     "part-of-malicious-infrastructure": ["malicious-infrastructure"],
     "evidenced-by": ["observation"],
     "owned-by": ["identity"],

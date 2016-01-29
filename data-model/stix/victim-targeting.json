@@ -125,6 +125,8 @@
     "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "observation", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
     "kill-chain-phases": ["kill-chain-phase"],
     "exploits": ["exploit-target"],
-    "duplicate-of": ["victim-targeting"]
+    "duplicate-of": ["victim-targeting"],
+    "suggested-update": ["victim-targeting"],
+    "derived-from": ["victim-targeting"]
   }
 }

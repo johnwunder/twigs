@@ -42,6 +42,8 @@
     "kill-chain-phases": ["kill-chain-phase"],
     "exploits": ["exploit-target"],
     "duplicate-of": ["malicious-tool"],
+    "suggested-update": ["malicious-tool"],
+    "derived-from": ["malicious-tool"],
     "characterized-by": ["asset"]
   },
   "required": ["type"]

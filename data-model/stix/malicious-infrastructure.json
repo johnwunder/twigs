@@ -62,6 +62,8 @@
     "kill-chain-phases": ["kill-chain-phase"],
     "exploits": ["exploit-target"],
     "duplicate-of": ["malicious-infrastructure"],
+    "suggested-update": ["malicious-infrastructure"],
+    "derived-from": ["malicious-infrastructure"],
     "characterized-by": ["asset"]
   }
 }

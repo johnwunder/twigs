@@ -98,7 +98,9 @@
   ],
   "relationships": {
     "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "observation", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
-    "duplicate-of": ["course-of-action"]
+    "duplicate-of": ["course-of-action"],
+    "suggested-update": ["course-of-action"],
+    "derived-from": ["course-of-action"]
   },
   "required": ["stage", "type", "objective"]
 }

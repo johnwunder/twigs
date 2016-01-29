@@ -163,6 +163,8 @@
     "suggested": ["course-of-action"],
     "kill-chain-phase": ["kill-chain-phase"],
     "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "observation", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
-    "duplicate-of": ["indicator"]
+    "duplicate-of": ["indicator"],
+    "suggested-update": ["indicator"],
+    "derived-from": ["indicator"]
   }
 }

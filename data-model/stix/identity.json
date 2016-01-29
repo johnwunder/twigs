@@ -15,7 +15,7 @@
         },
         "ciq-specification": {
           "type": "string",
-          "description": "String containing OASIS CIQ-PIL schema 3.0 XML formatted content describing the Identity in more detail"
+          "description": "A string containing OASIS CIQ-PIL schema 3.0 XML formatted content describing the Identity in more detail"
         },
         "stix-resolvers": {
           "type": "array",
@@ -66,6 +66,8 @@
   ],
   "relationships": {
     "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "observation", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
-    "duplicate-of": ["identity"]
+    "duplicate-of": ["identity"],
+    "suggested-update": ["identity"],
+    "derived-from": ["identity"]
   }
 }

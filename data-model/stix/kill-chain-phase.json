@@ -21,7 +21,9 @@
   ],
   "relationships": {
     "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "observation", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
-    "duplicate-of": ["kill-chain-phase"]
+    "duplicate-of": ["kill-chain-phase"],
+    "suggested-update": ["kill-chain-phase"],
+    "derived-from": ["kill-chain-phase"]
   },
   "tlo": false
 }
