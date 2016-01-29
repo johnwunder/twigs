@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-	"title": "asset",
+  "title": "asset",
   "description": "Something of value owned by an organization",
-	"type": "object",
+  "type": "object",
   "allOf": [
     {
       "$ref": "../common/core.json"
@@ -11,18 +11,121 @@
       "$ref": "../common/describable.json"
     },
     {
+      "$ref": "../common/referenceable.json"
+    },
+    {
       "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["asset"]
+        },
         "variety": {
           "type": "string",
-          "description": "The type of asset this represents",
-          "enum": ["Server", "Desktop", "Networking"]
+          "enum": [
+            "Media - Backup tapes",
+            "Media - Disk media",
+            "Media - Documents",
+            "Media - Flash drive or card",
+            "Media - Hard disk drive",
+            "Media - Identity smart card",
+            "Media - Payment card",
+            "Media - Other/Unknown",
+            "Network - Access control reader",
+            "Network - Camera or surveillance system",
+            "Network - Firewall",
+            "Network - Hardware security module (HSM)",
+            "Network - IDS or IPs",
+            "Network - Mobile broadband network",
+            "Network - Private branch exchange (PBX)",
+            "Network - Private WAN",
+            "Network - Programmable logic controller (PLC)",
+            "Network - Public WAN",
+            "Network - Remote terminal unit (RTU)",
+            "Network - Router or switch",
+            "Network - Storage area network (SAN)",
+            "Network - Telephone",
+            "Network - VoIP adapter",
+            "Network - Wired LAN",
+            "Network - Wireless LAN",
+            "Network - Other/Unknown",
+            "People - Administrator",
+            "People - Auditor",
+            "People - Call center",
+            "People - Cashier",
+            "People - Customer",
+            "People - Developer",
+            "People - End-user",
+            "People - Executive",
+            "People - Finance",
+            "People - Former employee",
+            "People - Guard",
+            "People - Helpdesk",
+            "People - Human resources",
+            "People - Maintenance",
+            "People - Manager",
+            "People - Partner",
+            "People - Other/Unknown",
+            "Public Terminal - Automated Teller Machine (ATM)",
+            "Public Terminal - Detached PIN pad or card reader",
+            "Public Terminal - Gas 'pay-at-the-pump' terminal",
+            "Public Terminal - Self-service kiosk",
+            "Public Terminal - Other/Unknown",
+            "Server - Authentication",
+            "Server - Backup",
+            "Server - Database",
+            "Server - DHCP",
+            "Server - Directory (LDAP, AD)",
+            "Server - Distributed control system (DCS)",
+            "Server - DNS",
+            "Server - File",
+            "Server - Log or event management",
+            "Server - Mail",
+            "Server - Mainframe",
+            "Server - Payment switch or gateway",
+            "Server - POS controller",
+            "Server - Print",
+            "Server - Proxy",
+            "Server - Remote access",
+            "Server - SCADA system",
+            "Server - Web application",
+            "Server - Code repository",
+            "Server - Virtual Host",
+            "Server - Other/Unknown",
+            "User Device - Authentication token or device",
+            "User Device - Desktop or workstation",
+            "User Device - Laptop",
+            "User Device - Media player or recorder",
+            "User Device - Mobile phone or smartphone",
+            "User Device - Peripheral",
+            "User Device - POS terminal",
+            "User Device - Tablet",
+            "User Device - Telephone",
+            "User Device - VoIP phone",
+            "User Device - Other/Unknown",
+            "Unknown"
+          ],
+          "description": "What variety of asset this Asset object represents most. Based on VERIS Asset classification"
         },
         "ownership": {
           "type": "string",
+          "enum": [
+            "Victim",
+            "Employee",
+            "Partner",
+            "Customer",
+            "Unknown",
+            "Not Applicable"
+          ],
           "description": "The ownership category for this asset"
         },
         "management": {
           "type": "string",
+          "enum": [
+            "Internal",
+            "External",
+            "Unknown",
+            "Not Applicable"
+          ],
           "description": "The management category for this asset"
         },
         "compromised": {
@@ -32,16 +135,17 @@
         "owner_aware": {
           "type": "boolean",
           "description": "Whether or not the owner is aware that this asset has been compromised"
-        },
-        "technical_characteristics": {
-          "$ref": "../cybox/characterization.json"
         }
       }
     }
   ],
   "relationships": {
-    "related": ["asset"],
+    "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "observation", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
     "duplicate-of": ["asset"],
+    "suggested-update": ["asset"],
+    "derived-from": ["asset"],
+    "part-of-malicious-infrastructure": ["malicious-infrastructure"],
+    "evidenced-by": ["observation"],
     "owned-by": ["identity"],
     "managed-by": ["identity"],
     "compromised-by": ["threat-actor"]

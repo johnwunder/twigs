@@ -5,7 +5,13 @@
 	"type": "object",
   "allOf": [
     {
-      "$ref": "identity.json"
+      "$ref": "../common/core.json"
+    },
+    {
+      "$ref": "../common/describeable.json"
+    },
+    {
+      "$ref": "../common/referenceable.json"
     },
     {
       "properties": {
@@ -16,10 +22,6 @@
         "impact": {
           "$ref": "../common/impact.json",
           "description": "The impact that an attack by this threat actor could have on operations."
-        },
-        "identity": {
-          "$ref": "../common/identity-characteristics.json",
-          "description": "The identity of this threat actor"
         },
         "kind": {
           "description": "The type of threat actor",
@@ -135,9 +137,25 @@
         }
     	},
       "relationships": {
-        "observed-ttp": ["malware", "attack-pattern"],
-        "associated": ["campaign", "threat-actor"],
-        "duplicate-of": ["threat-actor"]
+        "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "observation", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
+        "duplicate-of": ["threat-actor"],
+        "suggested-update": ["threat-actor"],
+        "derived-from": ["threat-actor"],
+        "identity-of": ["identity"],
+        "persona-of": ["identity"],
+        "targeted": ["identity"],
+        "breached": ["identity"],
+        "administers": ["campaign"],
+        "operates": ["campaign"],
+        "plans": ["campaign"],
+        "uses-malware": ["malware"],
+        "uses-exploit": ["exploit"],
+        "evidenced-by": ["observation"],
+        "compromises": ["asset"],
+        "controls-malicious-infrastructure": ["malicious-infrastructure"],
+        "administers-malicious-infrastructure": ["malicious-infrastructure"],
+        "uses-attack-pattern": ["attack-pattern"],
+        "target-selection-of": ["victim-targeting"]
       }
     }
   ]

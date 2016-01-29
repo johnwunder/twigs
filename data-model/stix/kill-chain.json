@@ -11,6 +11,9 @@
       "$ref": "../common/describable.json"
     },
     {
+      "$ref": "../common/referenceable.json"
+    },
+    {
       "properties": {
         "type": {
           "type": "string",
@@ -27,6 +30,9 @@
     }
   ],
   "relationships": {
-    "duplicate-of": ["kill-chain"]
+    "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "observation", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
+    "duplicate-of": ["kill-chain"],
+    "suggested-update": ["kill-chain"],
+    "derived-from": ["kill-chain"]
   }
 }

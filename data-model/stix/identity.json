@@ -5,16 +5,69 @@
   "type": "object",
   "allOf": [
     {"$ref": "../common/core.json"},
-    {"$ref": "../common/identity-characteristics.json"},
+    {"$ref": "../common/describable.json"},
+    {"$ref": "../common/referenceable.json"},
     {
       "properties": {
         "type": {
-          "enum": ["identity", "threat-actor"]
+          "type": "string",
+          "enum": ["identity"]
+        },
+        "ciq-specification": {
+          "type": "string",
+          "description": "A string containing OASIS CIQ-PIL schema 3.0 XML formatted content describing the Identity in more detail"
+        },
+        "stix-resolvers": {
+          "type": "array",
+          "description": "The stix_resolvers section lists the ways that this Organization or Individual can accept or provide STIX v2 content. The order of the entries is important as the first options should be tried first, progressing down the list until the last object.",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "taxii-2": {
+                    "type": "string",
+                    "description": "A URL pointing to the main TAXII 2 server for this Organization in the format https://<server>:<port>/<basepath>"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "scp": {
+                    "type": "string",
+                    "description": "An scp connection string pointing to the main SCP STIX share for this Organization in the format <user>@<server>:<port>/<basepath>"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "email-pgp": {
+                    "type": "string",
+                    "description": "An email address that the consumer can use to share PGP encrypted STIX objects with this Organization in the format <person>@<domain-name>"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "phone": {
+                    "type": "string",
+                    "description": "A string describing how to contact the Organization or Individual by phone in order to exchange the STIX information"
+                  }
+                }
+              }
+            ]
+          }
         }
       }
     }
   ],
   "relationships": {
-    "duplicate-of": ["identity"]
+    "related": ["asset", "attack-pattern", "campaign", "configuration", "course-of-action", "identity", "incident", "indicator", "kill-chain", "kill-chain-phase", "malicious-infrastructure", "malicious-tool", "malware", "observation", "threat-actor", "tool", "victim-targeting", "vulnerability", "weakness"],
+    "duplicate-of": ["identity"],
+    "suggested-update": ["identity"],
+    "derived-from": ["identity"]
   }
 }
